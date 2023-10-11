@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;   
+}
+
+body>header{
+    display: flex;
+    height: 10vh;
+    background-color: #6B4942;
+    text-align: center;
+    width: 100vw;
+}
+body>header>h1{
+    height: 5vh;
+    width: 90vw;
+    line-height: 10vh;
+    padding-left: 25px;
+    text-align: center;
+    display: flex;
+    float: left;
+}
+body>header>p{
+    height: 5vh;
+    width: 10vw;
+    display: flex;
+    float: right;
+}
+body>header>p>a{
+    margin: 5px;
+    padding: 5px;
+    text-decoration: none;
+    background-color: white;
+    color: black;
+    border-style: solid;
+    border-color: black;
+    border-radius: 20px;
+    display: flex;
+    width: 4vw;
+    height: 4vh;
+    
+}
+body>header>p>a:hover{
+    background-color: red;
+
+}
+body>nav{
+    background-color: #BA5743;
+    display: block;
+    width: 100vw;
+    height: 5vh;
+
+}
+
+body>nav a{
+    text-decoration: none;
+    color: #6E3327;
+}
+
+body>nav ul{
+    display: flex;
+    list-style-type: none;
+}
+
+body>nav ul.dropdown{
+    color: gray;
+    background-color: #6B4942;
+    flex-direction: column;
+    display: none;
+    position: absolute;
+    width: 10vw;
+}
+
+body>nav ul.dropdown>li:hover{
+    background-color: #9aa;
+}
+
+body>nav ul.dropdown > li a {
+    display: block;
+    text-align: center;
+    color: gray;
+}
+
+body>nav>ul{
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+body>nav ul.dropdown > li a:hover {
+    text-decoration: underline;
+    color: gray;
+}
+
+body>nav>ul>li{
+    height: 5vh;
+    line-height: 5vh;
+}
+
+body>nav>ul>li>a{
+    display: block;
+    text-align: center;
+    width: 10vw;
+}
+
+body>nav>ul>li:hover{
+    background-color: #ED6F55;
+}
+
+body>nav>ul>li:hover ul.dropdown{
+    display: block;
+}
+body>main>aside>ul{
+    width: 15vw;
+    height: 80vh;
+    align-content: center;
+    display: inline;
+    background-color: #ED6F55;
+    flex-direction: column;
+    text-align: center;
+    float: right;
+}
+
+body>main{
+    width: 100vw;
+    height: 80vh;
+    background-color: #F0AEA1;
+    align-content: left;
+    float: left;
+}
+body>footer{
+    background-color: #6B4942;
+    height: 5vh;
+    width: 100vw;
+    display: flex;
+   
+}
