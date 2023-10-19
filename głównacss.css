@@ -19,7 +19,7 @@
 }
 body > div > header > h1{
     height: 5vh;
-    line-height: 5vh;
+    line-height: 4vh;
     width: auto;
     border-width: 4px;
     border-style: solid;
@@ -112,6 +112,12 @@ body > main{
 }
 main > article{
     width: calc(100vw - 30vw);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#rick{
+    display: none;
 }
 #right{
     flex-flow: column;
@@ -129,18 +135,20 @@ main > article{
     border-color: blue;
     border-bottom: none;
     border-top: none;
-    height: 10vh;
+    height: 5vh;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
     display: flex;
-    flex-wrap: wrap;
-    align-content: flex-start;
     background-color: lightblue;
 }
 #hasz>a{
     display: block;
-    height: 2vh;
-    padding: 2px;
 }
 #patreon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-width: 4px;
     background-color: lightblue;
     border-style: solid;
@@ -150,7 +158,7 @@ main > article{
 #reszta{
     border-width: 4px;
     background-color: lightblue;
-    height: calc(100vh - 35vh);
+    height: calc(100vh - 30vh);
     border-style: solid;
     border-color: blue;
     border-top: none;
