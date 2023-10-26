@@ -16,8 +16,8 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-}
-body > div > header > h1{
+} 
+body > div > header > h1{ /* header */
     height: 5vh;
     line-height: 4vh;
     width: auto;
@@ -26,12 +26,12 @@ body > div > header > h1{
     border-color: #618B83;
     background-color: #618B83;
 }
-body > div{
+body > div{ /* header i div z resztą */
     display: flex;
     justify-content: space-between;
     background-color: #618B83;
 }
-body form{
+body form{ /* formularz */
     height: 5vh;
     border-width: 4px;
     align-items: center;
@@ -43,13 +43,13 @@ body form{
     border-style: solid;
     border-color: #618B83;
 }
-form > input[type=text]{
+form > input[type=text]{/* formularz input */
     padding: 6px;
     font-size: 17px;
     width: auto;
     border: none;
 }
-body > div button[type=Submit]{
+body > div button[type=Submit]{/* formularz przyisk */
     float: right;
     padding: 6px 5px;
     margin-right: 1px;
@@ -58,7 +58,7 @@ body > div button[type=Submit]{
     border: none;
     cursor: pointer;
 }
-body div>button{
+body div>button{ /* przycisk menu */
     border: none;
     border-width: 4px;
     border-style: solid;
@@ -66,10 +66,10 @@ body div>button{
     width: 6vw;
     background-color: lightblue;
 }
-body div>button:hover{
+body div>button:hover{ /* podświetlenie menu*/
     background-color: aqua;
 }
-body div>button:active{
+body div>button:active{ /* przyciskanie menu */ 
     color: white;
 }
 body > div a{ /*button new*/
@@ -87,49 +87,30 @@ body > div a{ /*button new*/
     text-decoration: none;
     color: black;
 }
-body > div a:hover{
+body > div a:hover{ /* podświetlenie new */
     background-color: aqua;
 }
-body > div a:active{
+body > div a:active{ /* przyciskanie new */
     color: white;
 }
-body > div > div {
+body > div > div { /* div > search bar i reszta */
     display: flex;
 }
-body > main{
+body > main{ 
     display: flex;
     list-style: none;
 }
-.left > ul{
+.left > ul{ /* lewy aside wszystko */
     display: flex;
     flex-flow: column;
     list-style: none;
 }
-.left{
+.left{ /* lewy aside */
     width: 15vw;
     text-align: center;
     background-color: blue;
 }
-main > article{
-    width: calc(100vw - 30vw);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#rick{
-    display: none;
-}
-#right{
-    flex-flow: column;
-    width: 15vw;
-    background-color: lightblue;
-    border-width: 4px;
-    border-style: solid;
-    border-color: blue;
-    border-bottom: none;
-    border-top: none;
-}
-#hasz{
+#hasz{ /* hasztagi */
     border-width: 4px;
     border-style: solid;
     border-color: blue;
@@ -145,7 +126,7 @@ main > article{
 #hasz>a{
     display: block;
 }
-#patreon{
+#patreon{ /* patreon */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -155,7 +136,7 @@ main > article{
     border-color: blue;   
     height: 5vh;
 }
-#reszta{
+#reszta{ /* reszta lewego aside */
     border-width: 4px;
     background-color: lightblue;
     height: calc(100vh - 30vh);
@@ -164,7 +145,26 @@ main > article{
     border-top: none;
     border-bottom: none;
 }
-footer > div{
+main > article{ /* treść */
+    width: calc(100vw - 30vw);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#rick{ /*rick*/
+    display: none;
+}
+#right{ /* prawy aside */
+    flex-flow: column;
+    width: 15vw;
+    background-color: lightblue;
+    border-width: 4px;
+    border-style: solid;
+    border-color: blue;
+    border-bottom: none;
+    border-top: none;
+}
+footer > div{ /* dancin cockroach*/
     border-width: 4px;
     display: flex;
     height: 15vh;
@@ -172,7 +172,7 @@ footer > div{
     border-color: blue;
     background-color: lightblue;
 }
-footer{
+footer{ /* the foot */ 
     background-color: blue;
 }
 
