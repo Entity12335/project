@@ -23,13 +23,13 @@ body > div > header > h1{
     width: auto;
     border-width: 4px;
     border-style: solid;
-    border-color: blue;
-    background-color: lightblue;
+    border-color: #618B83;
+    background-color: #618B83;
 }
 body > div{
     display: flex;
     justify-content: space-between;
-    background-color: blue;
+    background-color: #618B83;
 }
 body form{
     height: 5vh;
@@ -41,7 +41,7 @@ body form{
     align-items: center;
     background-color: lightblue;
     border-style: solid;
-    border-color: blue;
+    border-color: #618B83;
 }
 form > input[type=text]{
     padding: 6px;
@@ -62,7 +62,7 @@ body div>button{
     border: none;
     border-width: 4px;
     border-style: solid;
-    border-color: blue;
+    border-color: #618B83;
     width: 6vw;
     background-color: lightblue;
 }
@@ -72,11 +72,11 @@ body div>button:hover{
 body div>button:active{
     color: white;
 }
-body > div a{
+body > div a{ /*button new*/
     border-width: 4px;
     display: block;
     border-style: solid;
-    border-color: blue;
+    border-color: #618B83;
     border-left: none;
     border-right: none;
     height: 5vh;
