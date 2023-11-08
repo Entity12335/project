@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;   
 }
-
 body>header{
     display: flex;
     height: 10vh;
@@ -37,8 +36,7 @@ body>header>p>a{
     border-radius: 20px;
     display: flex;
     width: 4vw;
-    height: 4vh;
-    
+    height: 4vh; 
 }
 body>header>p>a:hover{
     background-color: red;
@@ -49,7 +47,6 @@ body>nav{
     display: block;
     width: 100vw;
     height: 5vh;
-
 }
 
 body>nav a{
@@ -114,6 +111,14 @@ body>nav>ul>li:hover ul.dropdown{
 body>main>aside>ul{
     width: 15vw;
     height: 80vh;
+    flex-direction: column;
+    text-align: center;
+    float: right;
+}
+body>main>aside{
+    width: 15vw;
+    height: 80vh;
+    position: sticky;
     align-content: center;
     display: inline;
     background-color: #ED6F55;
@@ -147,5 +152,4 @@ body>footer{
     height: 5vh;
     width: 100vw;
     display: flex;
-   
 }
