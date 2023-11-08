@@ -39,7 +39,7 @@ body form{ /* formularz */
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: lightblue;
+    background-color: #e69c6a;
     border-style: solid;
     border-color: #618B83;
 }
@@ -64,10 +64,10 @@ body div>button{ /* przycisk menu */
     border-style: solid;
     border-color: #618B83;
     width: 6vw;
-    background-color: lightblue;
+    background-color: #e69c6a;
 }
 body div>button:hover{ /* podświetlenie menu*/
-    background-color: aqua;
+    background-color: #E07750;
 }
 body div>button:active{ /* przyciskanie menu */ 
     color: white;
@@ -82,13 +82,13 @@ body > div a{ /*button new*/
     height: 5vh;
     line-height: 4vh;
     text-align: center;
-    background-color: lightblue;
+    background-color: #e69c6a;
     width: 5vw;
     text-decoration: none;
     color: black;
 }
 body > div a:hover{ /* podświetlenie new */
-    background-color: aqua;
+    background-color: #E07750;
 }
 body > div a:active{ /* przyciskanie new */
     color: white;
@@ -99,6 +99,8 @@ body > div > div { /* div > search bar i reszta */
 body > main{ 
     display: flex;
     list-style: none;
+    padding: 3px;
+    background-color: #615753;
 }
 .left > ul{ /* lewy aside wszystko */
     display: flex;
@@ -108,12 +110,12 @@ body > main{
 .left{ /* lewy aside */
     width: 15vw;
     text-align: center;
-    background-color: blue;
+    background-color: #615753;
 }
 #hasz{ /* hasztagi */
     border-width: 4px;
     border-style: solid;
-    border-color: blue;
+    border-color: #615753;
     border-bottom: none;
     border-top: none;
     height: 5vh;
@@ -121,11 +123,15 @@ body > main{
     align-items: center;
     justify-content: center;
     display: flex;
-    background-color: lightblue;
+    background-color: #5bcab4;
 }
 #hasz>a{
     display: block;
 }
+#hasz:hover{
+    background-color: #51E0C4;
+}
+
 #patreon{ /* patreon */
     display: flex;
     align-items: center;
@@ -133,15 +139,15 @@ body > main{
     border-width: 4px;
     background-color: lightblue;
     border-style: solid;
-    border-color: blue;   
+    border-color: #615753;   
     height: 5vh;
 }
-#reszta{ /* reszta lewego aside */
+#ad{ /* reszta lewego aside */
     border-width: 4px;
     background-color: lightblue;
     height: calc(100vh - 30vh);
     border-style: solid;
-    border-color: blue;
+    border-color: #615753;
     border-top: none;
     border-bottom: none;
 }
@@ -150,6 +156,7 @@ main > article{ /* treść */
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #f3f3f3;
 }
 #rick{ /*rick*/
     display: none;
@@ -160,7 +167,7 @@ main > article{ /* treść */
     background-color: lightblue;
     border-width: 4px;
     border-style: solid;
-    border-color: blue;
+    border-color: #615753;
     border-bottom: none;
     border-top: none;
 }
@@ -168,12 +175,10 @@ footer > div{ /* dancin cockroach*/
     border-width: 4px;
     display: flex;
     height: 15vh;
-    border-style: solid;
-    border-color: blue;
     background-color: lightblue;
 }
 footer{ /* the foot */ 
-    background-color: blue;
+    background-color: #615753;
 }
 
 
