@@ -139,6 +139,13 @@ body>main>aside>p>a{
     width: 6vw;
     height: 4vh;
 }
+main>aside>ul>li{
+    list-style-type: none;
+}
+main>aside>ul>li>a{
+    text-decoration: none;
+    color: black;
+}
 
 body>main{
     width: 100vw;
