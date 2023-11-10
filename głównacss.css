@@ -184,6 +184,7 @@ footer > div{ /* dancin cockroach*/
     display: flex;
     height: 15vh;
     background-color: #867d79;
+    justify-content: center;
 }
 footer{ /* the foot */ 
     background-color: #615753;
