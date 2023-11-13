@@ -64,7 +64,7 @@ body div>button{ /* przycisk menu */
     border-width: 4px;
     border-style: solid;
     border-color: #618B83;
-    width: 6vw;
+    min-width: 6vw;
     background-color: #e69c6a;
 }
 body div>button:hover{ /* podświetlenie menu*/
@@ -201,7 +201,7 @@ footer{ /* the foot */
     font-weight: normal;
     speak: never;
   
-    display: inline-block;
+    display: inline;
     text-decoration: inherit;
     width: 1em;
     margin-right: .2em;
