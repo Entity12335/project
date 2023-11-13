@@ -96,6 +96,12 @@ body > div > div { /* div > search bar i reszta */
 main{
     display: flex;
     justify-content: space-between;
+    background-color: #f3f3f3;
+    border-style: solid;
+    border-color: #615753;
+    border-left: none;
+    border-right: none;
+    border-top: none;
 }
 #left{ /* lewy aside wszystko */
     display: flex;
@@ -171,10 +177,14 @@ article > form > div > button{
     width: 25vw;
 }
 footer > div{ /* dancin cockroach*/
-    justify-content: center;
     display: flex;
-    height: 15vh;
+    height: calc(15vh - 3px);
     background-color: #867d79;
+    justify-content: center;
+}
+footer{ /* the foot */ 
+    background-color: #615753;
+    height: calc(15vh - 3px);
 }
 
 

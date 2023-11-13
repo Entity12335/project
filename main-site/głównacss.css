@@ -182,13 +182,13 @@ main > article{ /* treść */
 
 footer > div{ /* dancin cockroach*/
     display: flex;
-    height: 15vh;
+    height: calc(15vh - 6px);
     background-color: #867d79;
     justify-content: center;
 }
 footer{ /* the foot */ 
     background-color: #615753;
-    height: 15vh;
+    height: calc(15vh - 6px);
 }
 
 
