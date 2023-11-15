@@ -2,47 +2,35 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 body>header{
-    display: flex;
     background-color: #6B4942;
-    text-align: center;
-    width: 100vw;
-    /* position: fixed;
-    top: 0; */
 }
 body>header>h1{
     line-height: 10vh;
-    padding-left: 25px;
-    text-align: center;
-    display: flex;
-    left: 100%;
-}
+    padding-left: 50px;
 
+}
+/* navigacja+dropdown */
 nav{
     background-color: #501;
-    /* position: fixed;
-    width: 100vw;
-    top: 90px;*/
 } 
-    
 nav a{
     text-decoration: none;
     color: rgb(17, 29, 29);
 }
-    
 nav ul{
     display: flex;
     list-style-type: none;
+    justify-content: space-evenly;
 }
-    
 nav ul.dropdown{
     background-color: rgba(170, 204, 204, 0.9);
     flex-direction: column;
     display: none;
     position: absolute;
     width: 10vw;
-    
 }
 nav ul.dropdown>li:hover{
     background-color: #9aa;
@@ -51,14 +39,7 @@ nav ul.dropdown > li a {
     display: block;
     text-align: center;
 }
-    
-nav>ul{
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: space-evenly;
-    align-items: center;
-    }
-    
+
 nav ul.dropdown > li a:hover {
     text-decoration: underline;
 }
@@ -81,6 +62,7 @@ nav>ul>li:hover{
 nav>ul>li:hover ul.dropdown{
     display: block;
 }
+/* login */
 nav>ul>p>a{
     margin: 5px;
     padding: 5px;
@@ -94,60 +76,26 @@ nav>ul>p>a{
 }
 main{
     display: flex;
-
-
+    background-image: url(./jedzenie-domowe-slupsk.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
 }
 main>article{
+
     background-color:#ED6F55;
-    display: block;
-    width: 90%;
-    padding-top: 137px;
-    /* padding: 15px; */
-}
-
-
-main>aside>ul{
-    flex-direction: column;
-    text-align: center;
-    display: flex;
-}
-main>aside{
+    width: 100vw;
+    padding: 15px;
     align-content: center;
-    display: flex;
-    background-color: #d3705c;
-    flex-direction: column;
-    width: 10%;
-    /* position: fixed;
-    right: 0;
-    top: 137px;
-    height: 85vh; */
+    
 }
-
-main>aside>ul>p>a{
-    margin: 5px;
-    padding: 5px;
-    text-decoration: none;
-    background-color: white;
-    color: black;
-    border-style: solid;
-    border-color: black;
-    border-radius: 20px;
-    display: block;
-    flex-wrap: wrap; 
-    align-content: center;
-/* 
-    position: fixed; 
-    bottom: 30px;
-    right: 20px; */
+aside {
+    width: 250px;
+    background-color: rgb(255, 70, 70);
+    padding: 20px;
 }
-aside>ul>li{
-    list-style-type: none;
-    padding-top: 40px;    
-    padding-bottom: 40px;
-}
-aside>ul>li>a{
-    text-decoration: none;
-    color: black;
+aside {
+    margin-right: -250px;
 }
 body>footer{
     background-color: #6B4942;
