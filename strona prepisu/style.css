@@ -16,6 +16,17 @@ body>header>h1{
 nav{
     background-color: #501;
 } 
+/* aside button */
+nav>ul>button{
+    padding: 5px;
+    text-decoration: none;
+    background-color: white;
+    color: black;
+    border-style: solid;
+    border-color: black;
+    border-radius: 20px;
+    display: flex;
+}
 nav a{
     text-decoration: none;
     color: rgb(17, 29, 29);
@@ -52,7 +63,7 @@ nav>ul>li{
 nav>ul>li>a{
     display: block;
     text-align: center;
-    width: 10vw;
+    width: 10vw
 }
     
 nav>ul>li:hover{
@@ -74,6 +85,7 @@ nav>ul>p>a{
     border-radius: 20px;
     display: flex;
 }
+/* main */
 main{
     display: flex;
     background-image: url(./jedzenie-domowe-slupsk.png);
@@ -89,6 +101,7 @@ main>article{
     align-content: center;
     
 }
+/* aside */
 aside {
     width: 250px;
     background-color: rgb(255, 70, 70);
@@ -97,6 +110,7 @@ aside {
 aside {
     margin-right: -250px;
 }
+/* stopka */
 body>footer{
     background-color: #6B4942;
     display: flex;
