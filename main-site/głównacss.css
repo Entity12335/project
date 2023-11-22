@@ -59,19 +59,32 @@ body > div button[type=Submit]{/* formularz przyisk */
     border: none;
     cursor: pointer;
 }
-body div>button{ /* przycisk menu */
+#user{ /* przycisk menu */
     border: none;
     border-width: 4px;
     border-style: solid;
     border-color: #618B83;
     min-width: 6vw;
     background-color: #e69c6a;
+    height: 5vh;
 }
-body div>button:hover{ /* podświetlenie menu*/
-    background-color: #E07750;
+#user:hover{ /* podświetlenie menu*/
+    background-color: aqua;
 }
-body div>button:active{ /* przyciskanie menu */ 
-    color: #f3f3f3;
+#log div{
+    display: flex;
+    display: none;
+}
+#log a{
+    min-width: 6vw;
+    border-left: solid;
+    border-right: solid;
+    border-color: #618B83;
+}
+#log:hover div{
+    display: block; 
+    flex-direction: column;
+    position: absolute;
 }
 body > div a{ /*button new*/
     border-width: 4px;
