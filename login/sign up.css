@@ -1,23 +1,19 @@
 @font-face {
     font-family: 'fontello';
-    src: url('./font/fontello.eot?2278434');
-    src: url('./font/fontello.eot?2278434#iefix') format('embedded-opentype'),
-         url('./font/fontello.woff2?2278434') format('woff2'),
-         url('./font/fontello.woff?2278434') format('woff'),
-         url('./font/fontello.ttf?2278434') format('truetype'),
-         url('./font/fontello.svg?2278434#fontello') format('svg');
+    src: url('./font/fontello.eot?57179589');
+    src: url('./font/fontello.eot?57179589#iefix') format('embedded-opentype'),
+         url('./font/fontello.woff2?57179589') format('woff2'),
+         url('./font/fontello.woff?57179589') format('woff'),
+         url('./font/fontello.ttf?57179589') format('truetype'),
+         url('./font/fontello.svg?57179589#fontello') format('svg');
     font-weight: normal;
     font-style: normal;
-}
-
-
-
+  }
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-} 
-
+}
 body > div > header > h1{ /* header */
     height: 5vh;
     line-height: 4vh;
@@ -32,7 +28,7 @@ body > div{ /* header i div z resztą */
     justify-content: space-between;
     background-color: #618B83;
 }
-body form{ /* formularz */
+body > div form{ /* formularz */
     height: 5vh;
     border-width: 4px;
     align-items: center;
@@ -44,7 +40,7 @@ body form{ /* formularz */
     border-style: solid;
     border-color: #618B83;
 }
-form > input[type=text]{/* formularz input */
+div > form > input[type=text]{/* formularz input */
     padding: 6px;
     font-size: 17px;
     width: auto;
@@ -86,6 +82,9 @@ body > div button[type=Submit]{/* formularz przyisk */
     flex-direction: column;
     position: absolute;
 }
+body div>button:active{ /* przyciskanie menu */ 
+    color: white;
+}
 body > div a{ /*button new*/
     border-width: 4px;
     display: block;
@@ -101,111 +100,108 @@ body > div a{ /*button new*/
     text-decoration: none;
     color: black;
 }
-body > div a:hover{ /* podświetlenie new */
-    background-color: #E07750;
+div >a:hover{ /* podświetlenie new */
+    background-color: aqua;
 }
 body > div a:active{ /* przyciskanie new */
-    color: #f3f3f3;
+    color: white;
 }
 body > div > div { /* div > search bar i reszta */
     display: flex;
 }
-body > main{ 
+main{
     display: flex;
-    list-style: none;
-    padding: 3px;
-    background-color: #615753;
-}
-
-.left > ul{ /* lewy aside wszystko */
-    display: flex;
-    flex-flow: column;
-    list-style: none;
-}
-.left{ /* lewy aside */
-    width: 15vw;
-    text-align: center;
-    background-color: #615753;
-}
-#hasz{ /* hasztagi */
-    border-width: 4px;
-    border-style: solid;
-    border-color: #615753;
-    border-bottom: none;
-    border-top: none;
-    height: 5vh;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    background-color: #5bcab4;
-}
-#hasz>a{
-    display: block;
-}
-#hasz:hover{
-    background-color: #51E0C4;
-}
-
-#patreon{ /* patreon */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-width: 4px;
-    background-color: #d39179;
-    border-style: solid;
-    border-color: #615753;   
-    height: 5vh;
-}
-#patreon:hover{
-    background-color: #E07750;
-}
-#ad{ /* reklama */
-    border-width: 4px;
-    background-color: #bda198;
-    height: calc(100vh - 30vh);
-    border-style: solid;
-    border-color: #615753;
-    border-top: none;
-    border-bottom: none;
-}
-
-main > article{ /* treść */
-    width: calc(100vw - 30vw);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
     background-color: #f3f3f3;
-}
-
-#rick{ /*rick*/
-    display: none;
-}
-
-#right{ /* prawy aside */
-    flex-flow: column;
-    width: 15vw;
-    background-color: #bda198;
-    border-width: 4px;
     border-style: solid;
     border-color: #615753;
-    border-bottom: none;
+    border-left: none;
+    border-right: none;
     border-top: none;
 }
-
+#left{ /* lewy aside wszystko */
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    width: 25vw;
+    height: 80vh;
+}
+#left>div{
+    display: flex;
+    padding: 2vh;
+}
+#left a{
+    display: block;
+    text-decoration: none;
+    font-size: 6vh;
+    border-style: solid;
+    background-color: #e69c6a;
+    border-color:#618B83;
+    color: black;
+}
+#left > img{
+    width: 25vw;
+    height: 80vh;
+}
+article{ /* logowanie */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 20vw;
+}
+article > header{
+    text-align: center;
+    padding-bottom: 4vh;
+}
+article > div{
+    padding-top: 2vh;
+    text-align: center;
+}
+article > div > input{
+    width: 45%;
+}
+article > form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+article > form > input{
+    border-color: #e69c6a;
+    margin-top: 1vh;
+    font-size: 17px;
+    padding-left: 3px;
+} 
+article > form > div{
+    display: flex;
+    padding-top: 2vh;
+    justify-content: space-evenly;
+}
+article > form > div > input{
+    padding: 5px;
+    width: 35%;
+}
+article > form > div > button{
+    width: 30%;
+}
+#right{ /* prawy aside */
+    width: 25vw;
+    display: flex;
+    align-content: stretch;
+    height: 80vh;
+}
+#right > img{
+    width: 25vw;
+}
 footer > div{ /* dancin cockroach*/
     display: flex;
-    height: calc(15vh - 6px);
+    height: calc(15vh - 3px);
     background-color: #867d79;
     justify-content: center;
 }
 footer{ /* the foot */ 
     background-color: #615753;
-    height: calc(15vh - 6px);
+    height: calc(15vh - 3px);
 }
-
-
-
 
 
 [class^="icon-"]:before, [class*=" icon-"]:before {
@@ -214,7 +210,7 @@ footer{ /* the foot */
     font-weight: normal;
     speak: never;
   
-    display: inline;
+    display: inline-block;
     text-decoration: inherit;
     width: 1em;
     margin-right: .2em;
@@ -243,8 +239,10 @@ footer{ /* the foot */
     /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
   }
   
-  .icon-down-open:before { content: '\e800'; } /* '' */
-  .icon-up-open:before { content: '\e801'; } /* '' */
-  .icon-plus:before { content: '\e802'; } /* '' */
+  .icon-plus:before { content: '\e803'; } /* '' */
+  .icon-up-open:before { content: '\e804'; } /* '' */
+  .icon-down-open:before { content: '\e805'; } /* '' */
+  .icon-left-open:before { content: '\e806'; } /* '' */
+  .icon-right-open:before { content: '\e807'; } /* '' */
   .icon-search:before { content: '\f50d'; } /* '' */
   
