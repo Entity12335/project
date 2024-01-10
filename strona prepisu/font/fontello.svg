@@ -1,16 +1,18 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg">
-<metadata>Copyright (C) 2023 by original authors @ fontello.com</metadata>
+<metadata>Copyright (C) 2024 by original authors @ fontello.com</metadata>
 <defs>
 <font id="fontello" horiz-adv-x="1000" >
 <font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
 <missing-glyph horiz-adv-x="1000" />
-<glyph glyph-name="down-open" unicode="&#xe800;" d="M939 399l-414-413q-10-11-25-11t-25 11l-414 413q-11 11-11 26t11 25l93 92q10 11 25 11t25-11l296-296 296 296q11 11 25 11t26-11l92-92q11-11 11-25t-11-26z" horiz-adv-x="1000" />
+<glyph glyph-name="left-big" unicode="&#xe800;" d="M857 350v-71q0-30-18-51t-47-21h-393l164-164q21-20 21-50t-21-50l-42-43q-21-20-51-20-29 0-50 20l-364 364q-20 21-20 50 0 29 20 51l364 363q21 21 50 21 29 0 51-21l42-41q21-22 21-51t-21-51l-164-164h393q29 0 47-20t18-51z" horiz-adv-x="857.1" />
 
-<glyph glyph-name="up-open" unicode="&#xe801;" d="M939 107l-92-92q-11-10-26-10t-25 10l-296 297-296-297q-11-10-25-10t-25 10l-93 92q-11 11-11 26t11 25l414 414q11 10 25 10t25-10l414-414q11-11 11-25t-11-26z" horiz-adv-x="1000" />
+<glyph glyph-name="down-open" unicode="&#xe801;" d="M939 399l-414-413q-10-11-25-11t-25 11l-414 413q-11 11-11 26t11 25l93 92q10 11 25 11t25-11l296-296 296 296q11 11 25 11t26-11l92-92q11-11 11-25t-11-26z" horiz-adv-x="1000" />
 
-<glyph glyph-name="plus" unicode="&#xe802;" d="M0 291v119q0 20 14 35t35 14h281v281q0 20 15 35t35 14h119q20 0 34-14t15-35v-281h281q20 0 35-14t14-35v-119q0-21-14-35t-35-15h-281v-282q0-20-15-34t-34-15h-119q-21 0-35 15t-15 34v282h-281q-20 0-35 15t-14 35z" horiz-adv-x="878.9" />
+<glyph glyph-name="up-open" unicode="&#xe802;" d="M939 107l-92-92q-11-10-26-10t-25 10l-296 297-296-297q-11-10-25-10t-25 10l-93 92q-11 11-11 26t11 25l414 414q11 10 25 10t25-10l414-414q11-11 11-25t-11-26z" horiz-adv-x="1000" />
+
+<glyph glyph-name="plus" unicode="&#xe803;" d="M786 439v-107q0-22-16-38t-38-15h-232v-233q0-22-16-37t-38-16h-107q-22 0-38 16t-15 37v233h-232q-23 0-38 15t-16 38v107q0 23 16 38t38 16h232v232q0 22 15 38t38 16h107q23 0 38-16t16-38v-232h232q23 0 38-16t16-38z" horiz-adv-x="785.7" />
 
 <glyph glyph-name="search" unicode="&#xf50d;" d="M11 375q-23 87 0 173t87 150q48 49 110 74t128 25q65 0 127-25t110-74q52-52 77-119t21-137-36-132q28-8 49-29l174-173q35-35 35-85t-35-85q-35-35-85-35t-85 35l-173 174q-22 20-30 49-70-35-149-35-66 0-128 25t-110 73q-64 64-87 151z m101 86q0-93 65-158 66-65 159-65 92 0 157 65t66 158-66 158q-66 66-157 66-92 0-159-66-65-65-65-158z" horiz-adv-x="892.6" />
 </font>
