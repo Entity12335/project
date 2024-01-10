@@ -11,61 +11,32 @@
     <header>
         <h1>tytuł strony</h1>
     </header>
-    <nav>
-        
-        <ul>
-            <button id="toggleButton">Toggle Aside</button>
-            <li>
-                <a href="#">a</a>
-                <ul class="dropdown">
-                    <li><a href="#">a</a></li>
-                    <li><a href="#">a</a></li>
-                    <li><a href="#">a</a></li>
-                    <li><a href="#">a</a></li>
-                    <li><a href="#">a</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">aw</a>
-                <ul class="dropdown">
-                    <li><a href="#">a</a></li>
-                    <li><a href="#">a</a></li>
-                    <li><a href="#">a</a></li>
-                    <li><a href="#">a</a></li>
-                    <li><a href="#">a</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">a</a>
-                <ul class="dropdown">
-                    <li><a href="#">a</a></li>
-                    <li><a href="#">a</a></li>
-                    <li><a href="#">a</a></li>
-                    <li><a href="#">a</a></li>
-                    <li><a href="#">a</a></li>
-                </ul>
-            </li>
-            <p><a href="#">logowanie</a></p>
-        </ul>
-    </nav>
+    <div>
+        <form name="myForm" id="search" >
+            <input type="text" placeholder="Szukaj.." name="Szukaj">
+            <button type="submit" id="butt"><i class="icon-search"></i></button>
+        </form>
+        <a href="#"><i class="icon-plus"></i>new</a> <!-- link do tworzenia strony -->
+        <div id="log">
+            <button id="user"><i class="icon-down-open"></i>placeholder</button> <!-- nazwa użytkownika z bazy danych albo login/sineup -->
+            <div>
+            <a href="../login/login.html">Login</a>
+            <a href="../login/sing up.html">Sing up</a>
+            </div>
+        </div>
+    </div>
     
-    <main class="wrapper"> 
-        <aside id="aside">          
+    <main>
+        <aside class="left">
             <ul>
-                <li>
-                    <a href="#">a</a>                
+                <li id="hasz">
+                    <a href="#">########</a>
                 </li>
-                <li>
-                    <a href="#">ab</a>                
-                </li>
-                <li>
-                    <a href="#">a</a>                
-                </li>
-                <p><a href="#">return to main</a></p>
+                <li id="patreon"><a href="#">patreon</a></li>
+                <li id="ad"><img src="./giphy.gif" img here alt="ad"></li>
             </ul>
-            
         </aside>
-        <article id="article">
+        <article>
             <header>
                 <h2>nazwa potrawy</h2>
             </header>
@@ -76,6 +47,12 @@
                 </p>
             </section>  
         </article>
+        <aside id="right">
+                <p>Lorem, ipsum dolor.</p>
+                <p>Autem, tenetur modi?</p>
+                <p>Pariatur, corrupti ipsam?</p>
+                <p>Fuga, dolorum iusto.</p>
+        </aside>
     </main>
     <footer>
         &copy;sfsvhgfytug
