@@ -1,3 +1,124 @@
+<?php
+    session_start();
+
+    if((isset($_SESSION['zalogowany'])&&($_SESSION['zalogowany']))){
+        header('Location: ../main-site/główna.php');
+        exit();
+    }
+
+    if(isset($_POST['email'])){
+        //udana 
+        $jest_ok=true;
+
+        //login--------------------------------------------
+        $login = $_POST['login'];
+        //długość
+        if((strlen($login)<5) || (strlen($login)>20)){
+            $jest_ok=false;
+            $_SESSION['e_login']="Login musi mieć 5-20 znaków";
+        }
+        //alfanumeryczne
+        if(ctype_alnum($login)==false){
+            $jest_ok=false;
+            $_SESSION['e_login']="Login musi składać sie tylko z liter i cyfr (bez polskich znaków)";
+        }
+        //hasła--------------------------------------------
+        $password1 = $_POST['password1'];
+        $password2 = $_POST['password2'];
+        //długość
+        if((strlen($password1)<8)||(strlen($password1)>20)){
+            $jest_ok=false;
+            $_SESSION['e_password1']="Hasło musi mieć 8-20 znaków";
+        }
+        if($password1!=$password2){
+            $jest_ok=false;
+            $_SESSION['e_password2']="Hasła nie są takie same";
+        }
+
+        $haslo_hasz = password_hash($password1,PASSWORD_DEFAULT);
+        
+        //regulamin----------------------------------------
+        if(!isset($_POST['regulamin'])){
+            $jest_ok=false;
+            $_SESSION['e_regulamin']="regulamin nie zaakceptowany";
+        }
+        //email--------------------------------------------
+        $email = $_POST['email'];
+        $emailSave = filter_var($email, FILTER_SANITIZE_EMAIL);
+        if((filter_var($emailSave,FILTER_VALIDATE_EMAIL)==false) || $emailSave!=$email){
+            $jest_ok=false;
+            $_SESSION['e_email'] = "nie poprawny email";
+        }
+        //captcha------------------------------------------
+
+        $tajniak = "6LemdEwpAAAAAA8JTq6gFuSnCPRvV5RWteWtOnQc";
+
+        $sprawdz = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$tajniak.'&response='.$_POST['g-recaptcha-response']);
+
+        $odp = json_decode($sprawdz);
+
+        if($odp->success==false){
+            if(!isset($_POST['regulamin'])){
+                $jest_ok=false;
+                $_SESSION['e_bot']="Potwierdź że nie jesteś botem";
+            }
+        }
+        //powturzenia--------------------------------------
+
+        require_once"connect.php";
+        mysqli_report(MYSQLI_REPORT_STRICT);
+
+        try{
+            $connection = new mysqli($host,$db_user,"$db_password",$db_name);
+            if ($connection->connect_errno!=0) {
+                throw new Exception(mysqli_connect_errno());
+            }else{
+                //email-----------------------
+                $rezultat = $connection->query("SELECT id FROM users WHERE email='$email'") ;
+                if (!$rezultat) throw new Exception($connection->error);
+
+                $ile_emaili = $rezultat->num_rows;
+                
+                if ($ile_emaili>0){
+                    $jest_ok=false;
+                    $_SESSION['e_email']="Istnieje już konto na tym e-mailu";
+                }
+                //login-----------------------
+                $rezultat = $connection->query("SELECT id FROM users WHERE Login='$login'") ;
+                if (!$rezultat) throw new Exception($connection->error);
+
+                $ile_loginów = $rezultat->num_rows;
+                
+                if ($ile_loginów>0){
+                    $jest_ok=false;
+                    $_SESSION['e_login']="Istnieje już konto z takin Loginem";
+                }
+
+                //cezar--------------------------------------------
+                if($jest_ok==true){
+                    //jest git
+                    if($connection->query("INSERT INTO `users` (`ID`, `Login`, `Hasło`, `Email`) VALUES (NULL, '$login', '$haslo_hasz', '$email');")){
+
+                        $_SESSION['zalogowany']=true;
+                        header('Location: ./login.php');
+                        exit();
+
+                    }else{
+
+                        throw new Exception($connection->error);
+
+                    }
+                }
+                $connection->close();
+            }
+        }
+        catch(Exception $e){
+            echo '<span class="error">Błąd servera</span>';
+            echo '<br /> dev info: '.$e;
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +127,7 @@
     <title>Placeholder</title>
     <link rel="stylesheet" href="./sign up.css">
     <script src="./sing up.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
     <div>
@@ -38,18 +160,55 @@
             <header>
                 <h2>Zarejestruj Sie</h2>
             </header>
-            <form>
-                <input type="text" id="login" placeholder="Login">
-                <input type="password" id="password" placeholder="Hasło">
-                <input type="password" id="password" placeholder="Powtórz Hasło">
-                <input type="email" id="email" placeholder="Email">
-                <div id="reg">
-                    <input type="checkbox" id="regulamin">
+            <form method="post" action="">
+                <input type="text" id="login" name="login" placeholder="Login">
+                <?php
+                    if(isset($_SESSION['e_login'])){
+                        echo '<div class="error">'.$_SESSION['e_login'].'</div>';
+                        unset($_SESSION['e_login']);
+                    }
+                ?>
+                <input type="password" id="password1" name="password1" placeholder="Hasło">
+                <?php
+                    if(isset($_SESSION['e_password1'])){
+                        echo '<div class="error">'.$_SESSION['e_password1'].'</div>';
+                        unset($_SESSION['e_password1']);
+                    }
+                ?>
+                <input type="password" id="password2" name="password2" placeholder="Powtórz Hasło">
+                <?php
+                    if(isset($_SESSION['e_password2'])){
+                        echo '<div class="error">'.$_SESSION['e_password2'].'</div>';
+                        unset($_SESSION['e_password2']);
+                    }
+                ?>
+                <input type="email" id="email" name="email" placeholder="Email">
+                <?php
+                    if(isset($_SESSION['e_email'])){
+                        echo '<div class="error">'.$_SESSION['e_email'].'</div>';
+                        unset($_SESSION['e_email']);
+                    }
+                ?>
+                <label>
+                    <input type="checkbox" id="regulamin" name="regulamin">
                     <p>Regulamin</p>
-                </div>
+                </label>
+                    <?php
+                    if(isset($_SESSION['e_regulamin'])){
+                        echo '<div class="error">'.$_SESSION['e_regulamin'].'</div>';
+                        unset($_SESSION['e_regulamin']);
+                    }
+                    ?>
+                <div id="cp" class="g-recaptcha" data-sitekey="6LemdEwpAAAAADFzc66Wc0TlQjvlQnXm3CJdrlYW"></div>
+                <?php
+                    if(isset($_SESSION['e_bot'])){
+                        echo '<div class="error">'.$_SESSION['e_bot'].'</div>';
+                        unset($_SESSION['e_bot']);
+                    }
+                    ?>
                 <div id="przy">
                     <input type="button" value="pokaż hasło" id="seepass">
-                    <button type="submit">Wyślji</button> 
+                    <button type="submit" id="sub">Wyślji</button> 
                 </div>
             </form>
             <div>

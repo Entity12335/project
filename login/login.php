@@ -1,4 +1,9 @@
-<?php session_start(); ?>
+<?php session_start(); 
+    if((isset($_SESSION['zalogowany'])&&($_SESSION['zalogowany']))){
+    header('Location: ../main-site/główna.php');
+    exit();
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

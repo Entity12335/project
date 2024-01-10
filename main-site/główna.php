@@ -24,7 +24,7 @@
                 <button id="user"><i class="icon-down-open"></i>placeholder</button> <!-- nazwa użytkownika z bazy danych albo login/sineup -->
                 <div>
                     <?php
-                        if($_SESSION['zalogowany']){
+                        if((isset($_SESSION['zalogowany'])&&($_SESSION['zalogowany']))){
                             echo@'<a href="../logout.php">Wyloguj</a>';
                         }else{
                             echo '<a href="../login/login.php">Login</a><a href="../login/sing up.php">Sing up</a>';
