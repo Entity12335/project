@@ -167,18 +167,22 @@ body > main{
     border-top: none;
     border-bottom: none;
 }
-
-main > article{ /* treść */
+main>article>header{
     width: calc(100vw - 30vw);
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #f3f3f3;
 }
-
-#rick{ /*rick*/
-    display: none;
+main > article>section{ /* treść */
+    width: calc(100vw - 30vw);
+    height: calc(107.2vh - 30vh);
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    background-color: #f3f3f3;
 }
+
 
 #right{ /* prawy aside */
     flex-flow: column;
@@ -191,12 +195,7 @@ main > article{ /* treść */
     border-top: none;
 }
 
-footer > div{ /* dancin cockroach*/
-    display: flex;
-    height: calc(15vh - 6px);
-    background-color: #867d79;
-    justify-content: center;
-}
+
 footer{ /* the foot */ 
     background-color: #615753;
     height: calc(15vh - 6px);
