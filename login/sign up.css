@@ -171,16 +171,23 @@ article > form > input{
     font-size: 17px;
     padding-left: 3px;
 } 
-article > form > div{
+#reg{
+    display: flex;
+    justify-content: center;
+}
+#reg>p{
+    padding-left: 5px;
+}
+article > form > #przy{
     display: flex;
     padding-top: 2vh;
     justify-content: space-evenly;
 }
-article > form > div > input{
+article > form > #przy > input{
     padding: 5px;
     width: 35%;
 }
-article > form > div > button{
+article > form > #przy > button{
     width: 30%;
 }
 #right{ /* prawy aside */

@@ -41,8 +41,13 @@
             <form>
                 <input type="text" id="login" placeholder="Login">
                 <input type="password" id="password" placeholder="Hasło">
+                <input type="password" id="password" placeholder="Powtórz Hasło">
                 <input type="email" id="email" placeholder="Email">
-                <div>
+                <div id="reg">
+                    <input type="checkbox" id="regulamin">
+                    <p>Regulamin</p>
+                </div>
+                <div id="przy">
                     <input type="button" value="pokaż hasło" id="seepass">
                     <button type="submit">Wyślji</button> 
                 </div>
