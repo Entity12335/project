@@ -30,7 +30,7 @@ else
 
             header('Location: ../main-site/główna.php');
         }else{
-            $_SESSION['blad']= '<span style="color:red">błędny Login albo Hasło</span>';
+            $_SESSION['blad']= '<span style="color:red">Błędny Login albo Hasło</span>';
             $_SESSION['zalogowany']=false;
             header('Location: login.php');
         }
