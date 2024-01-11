@@ -170,17 +170,39 @@ body > main{
 main>article>header{
     width: calc(100vw - 30vw);
     display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: #f3f3f3;
 }
-main > article>section{ /* treść */
+main > article>section.hasz{ /* treść */
+    margin-top: 2px;
     width: calc(100vw - 30vw);
-    height: calc(107.2vh - 30vh);
+    /* height: calc(107.2vh - 30vh); */
     display: flex;
-    justify-content: center;
-    /* align-items: center; */
+    
+
+    background-color: #f3f3f3; 
+}
+main > article>section.description{ /* treść */
+    margin-top: 2px;
+    width: calc(100vw - 30vw);
+    /* height: calc(107.2vh - 30vh); */
+    display: flex;
+    
+
+    background-color: #f3f3f3; 
+}
+main>article>section.left{
+    margin-top: 2px;
+    width: calc(40vw - 10vw);
+    height: calc(30vh-);
     background-color: #f3f3f3;
+    display: flex;
+
+}
+main>article>section.right{
+    margin-top: 2px;
+    width: calc(40vw - 10vw);
+    background-color: #f3f3f3;
+    display: flex;
 }
 
 
