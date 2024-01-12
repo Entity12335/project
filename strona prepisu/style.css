@@ -116,14 +116,14 @@ body > main{
     
 }
 
-.left > ul{ /* lewy aside wszystko */
+#left > ul{ /* lewy aside wszystko */
     display: flex;
     flex-flow: column;
     list-style: none;
 }
-.left{ /* lewy aside */
+#left{ /* lewy aside */
     width: 15vw;
-    text-align: center;
+    
     background-color: #615753;
 }
 #hasz{ /* hasztagi */
@@ -168,45 +168,48 @@ body > main{
     border-top: none;
     border-bottom: none;
 }
-/* main>article{
 
-} */
 main>article>header{
     width: calc(100vw - 30vw);
     background-color: #f3f3f3;
+    margin: 10px;
 }
-main > article>section.hasz{ /* treść */
-    margin-top: 2px;
+.hasz{ 
+    margin: 10px;
     width: calc(100vw - 30vw);
     /* height: calc(107.2vh - 30vh); */
     background-color: #f3f3f3; 
 }
-main > article>section.description{ /* treść */
-    margin-top: 2px;
+.opis{ /* opis */
+    margin: 10px;
     width: calc(100vw - 30vw);
     height: calc(50vh - 30vh); 
 
     background-color: #f3f3f3; 
 }
-main>article>section.left{
-    margin-top: 2px;
-    width: calc(40vw - 10vw);
-    height: calc(30vh- 5vh);
+.left{
+    margin: 10px;
+    padding-left: 25px;
+    width: calc(50vw - 10vw);
+    height: calc(60vh- 5vh);
     background-color: #f3f3f3;
+    float: left;
     
 }
-main>article>section.right{
-    margin-top: 2px;
-    width: calc(40vw - 10vw);
-    height: calc(30vh- 5vh);
+.right{
+    margin: 10px;
+    margin-left: 0px;
+    margin-right: calc(20vw- 5vw);
+    width: calc(35vw - 10vw);
+    /* height: calc(40vh- 5vh); */
     background-color: #f3f3f3;
-    
+    float: right;
 }
-main > article>section{ /* treść */
-    margin-top: 2px;
+.Przepis{ /* treść */
+    float: left;
+    margin: 10px;
     width: calc(100vw - 30vw);
-    /* height: calc(107.2vh - 30vh); */
-
+    height: calc(50vh - 30vh);
     background-color: #f3f3f3; 
 }
 
