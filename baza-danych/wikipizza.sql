@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sty 17, 2024 at 11:40 PM
--- Wersja serwera: 10.4.32-MariaDB
--- Wersja PHP: 8.2.12
+-- Czas generowania: 18 Sty 2024, 08:32
+-- Wersja serwera: 10.4.25-MariaDB
+-- Wersja PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `wikipizza`
+-- Baza danych: `wikipizza`
 --
 
 -- --------------------------------------------------------
@@ -29,11 +29,22 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `artykuły` (
   `IDart` int(11) NOT NULL,
-  `Tytuł` text NOT NULL,
-  `Opis` mediumtext NOT NULL,
-  `Składniki` longtext NOT NULL,
-  `Img` longblob NOT NULL,
-  `Przepis` longtext NOT NULL
+  `Tytuł` text COLLATE utf8_polish_ci NOT NULL,
+  `Opis` mediumtext COLLATE utf8_polish_ci NOT NULL,
+  `Hasz` text COLLATE utf8_polish_ci NOT NULL,
+  `Składniki` longtext COLLATE utf8_polish_ci NOT NULL,
+  `Przepis` longtext COLLATE utf8_polish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `hasz`
+--
+
+CREATE TABLE `hasz` (
+  `Hasz` char(255) COLLATE utf8_polish_ci NOT NULL,
+  `Count` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 -- --------------------------------------------------------
@@ -44,13 +55,13 @@ CREATE TABLE `artykuły` (
 
 CREATE TABLE `users` (
   `ID` int(11) NOT NULL,
-  `Login` text NOT NULL,
-  `Hasło` text NOT NULL,
-  `Email` text NOT NULL
+  `Login` text COLLATE utf8_polish_ci NOT NULL,
+  `Hasło` text COLLATE utf8_polish_ci NOT NULL,
+  `Email` text COLLATE utf8_polish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
--- Dumping data for table `users`
+-- Zrzut danych tabeli `users`
 --
 
 INSERT INTO `users` (`ID`, `Login`, `Hasło`, `Email`) VALUES
@@ -67,23 +78,29 @@ ALTER TABLE `artykuły`
   ADD PRIMARY KEY (`IDart`);
 
 --
+-- Indeksy dla tabeli `hasz`
+--
+ALTER TABLE `hasz`
+  ADD PRIMARY KEY (`Hasz`);
+
+--
 -- Indeksy dla tabeli `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`ID`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT dla zrzuconych tabel
 --
 
 --
--- AUTO_INCREMENT for table `artykuły`
+-- AUTO_INCREMENT dla tabeli `artykuły`
 --
 ALTER TABLE `artykuły`
   MODIFY `IDart` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT dla tabeli `users`
 --
 ALTER TABLE `users`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
