@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
+<!-- wyszukiwarka -->
     <script src="./script.js"></script>
+<!-- dodawanie do listy -->
+    <script src="./lista.js"></script>
 </head> 
 <body>
     <div>
@@ -29,7 +32,7 @@
         </div>
     </div>
     <main>
-        <aside id="left">
+        <aside id="leftAside">
             <ul>
                 <li id="hasz">
                     <a href="#">########</a>
@@ -39,46 +42,67 @@
             </ul>
         </aside>
         <article>
-            <header>
-                <h2>nazwa potrawy</h2>
-            </header>
-            <section class="hasz">
-                <p>
-                    hasztagi
-                </p>
-            </section>  
-            <section class="opis">
-                <p>
-                    opis
-                </p>
-            </section>  
-
-
-            <div>
-                <section class="left">
-                    <ul>
-                        <li>skladniki</li>
-                        <li>skladniki</li>
-                        <li>skladniki</li>
-                        <li>skladniki</li>
-                        <li>skladniki</li>
-                        <li>skladniki</li>
-                        <li>skladniki</li>
-                        <li>skladniki</li>
-                    </ul>
+                <header>
+                    <h2>
+                        <form action="./form.php" method="post" id="myForms">
+                            <input type="text" placeholder="Nazwa potrawy" name="nazwa" required>
+                            <input type="submit" value="Wyślij">
+                        </form>
+                    </h2>
+                </header>
+                <section class="hasz">
+                    <p>
+                        <form action="./form.php" method="post" id="myForms">
+                            <input type="text" placeholder="hasze" name="hasz" required>
+                            <input type="submit" value="Wyślij">
+                        </form>
+                    </p>
                 </section>  
-                <section class="right">
-                    <p><img src="#" img here alt="zdjęcie"> zdjęcie</p> 
+                <section class="opis">
+                    <p>
+                        <form action="./form.php" method="post" id="myForms">
+                            <input type="text" placeholder="opis" name="opis" required>
+                            <input type="submit" value="Wyślij">
+                        </form>
+                    </p>
                 </section>
-            </div>
+            
+                    <div>
+                        <section class="left">
+                            <form action="./form.php" method="post" id="myForm">
+                            
+                                    <ul>
+                                        <li>
+                                            
+                                            <input type="text" placeholder="składniki" name="składnik"  required>
+                                        </li>
+                                    </ul>
+                                        <br>
+                                            <button type="button" onclick="addFormField()"> +</button>
+                                        </br>
+                                        <input type="submit" value="Wyślij">
 
-            <section class="Przepis">
-                <p>
-                    Przepis
-                </p>
-            </section> 
+                            </form> 
+                        </section> 
+                        <section class="right">
+                            <form action="./form.php" method="post" enctype="multipart/form-data" id="myForms">
+                            
+                                <input type="file" placeholder="zdjęcie"  name="zdjecie" accept="image/*">
+                                <input type="submit" value="Wyślij">
+                            </form> 
+                        </section>
+                    </div>
+                
+                <section class="Przepis" >
+                <form action="./form.php" method="post" id="myForm">
+                    <input type="text" placeholder="Przepis" name="Przepis"required></input>
+                    <input type="submit" value="Wyślij">
+                </form>
+                </section> 
+                
+
         </article>
-        <aside id="right">
+        <aside id="rightAside">
                 <p>Lorem, ipsum dolor.</p>
                 <p>Autem, tenetur modi?</p>
                 <p>Pariatur, corrupti ipsam?</p>

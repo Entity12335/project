@@ -121,7 +121,7 @@ body > main{
     flex-flow: column;
     list-style: none;
 }
-#left{ /* lewy aside */
+#leftAside{ /* lewy aside */
     width: 15vw;
     
     background-color: #615753;
@@ -190,6 +190,7 @@ main>article>header{
 main>article>div{
     display: flex;
 }
+
 .left{
     /* clear: ; */
     margin: 10px;
@@ -197,7 +198,14 @@ main>article>div{
     width: calc(55vw - 10vw);
     height: calc(60vh- 5vh);
     background-color: #f3f3f3;
-    
+}
+#myForms{
+    background-color: #f3f3f3;
+}
+#myForm{
+ 
+    background-color: #f3f3f3;
+
     
 }
 .right{
@@ -219,7 +227,7 @@ main>article>div{
     background-color: #f3f3f3; 
 }
 
-#right{ /* prawy aside */
+#rightAside{ /* prawy aside */
     flex-flow: column;
     width: 15vw;
     background-color: #bda198;
