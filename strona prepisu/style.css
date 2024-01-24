@@ -197,7 +197,7 @@ main>article>div{
     width: calc(55vw - 10vw);
     height: calc(60vh- 5vh);
     background-color: #f3f3f3;
-    /* float: left; */
+    
     
 }
 .right{
@@ -209,10 +209,10 @@ main>article>div{
 
     height: calc(40vh- 5vh);
     background-color: #f3f3f3;
-    /* float: right; */
+    
 }
 .Przepis{ /* treść */
-    /* float: left; */
+    
     margin: 10px;
     width: calc(100vw - 30vw);
     height: calc(50vh - 30vh);
