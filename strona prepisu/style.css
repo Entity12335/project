@@ -200,8 +200,8 @@ main>article>header{
     margin: 10px;
     margin-left: 0px;
     margin-right: calc(20vw- 5vw);
-    width: calc(35vw - 10vw);
-    /* height: calc(40vh- 5vh); */
+    width: calc(39vw - 11vw);
+    height: calc(40vh- 5vh);
     background-color: #f3f3f3;
     float: right;
 }
