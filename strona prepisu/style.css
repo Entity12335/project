@@ -183,7 +183,7 @@ main>article>header{
 .opis{ /* opis */
     margin: 10px;
     width: calc(100vw - 30vw);
-    height: calc(50vh - 30vh); 
+    /* height: calc(50vh - 30vh);  */
 
     background-color: #f3f3f3; 
 }
@@ -196,7 +196,7 @@ main>article>div{
     margin: 10px;
     padding-left: 25px;
     width: calc(55vw - 10vw);
-    height: calc(60vh- 5vh);
+    /* height: calc(60vh- 5vh); */
     background-color: #f3f3f3;
 }
 #myForms{
@@ -215,7 +215,7 @@ main>article>div{
 
     width: calc(34.3vw - 10vw);
 
-    height: calc(40vh- 5vh);
+    /* height: calc(40vh- 5vh); */
     background-color: #f3f3f3;
     
 }
@@ -223,7 +223,7 @@ main>article>div{
     
     margin: 10px;
     width: calc(100vw - 30vw);
-    height: calc(50vh - 30vh);
+    /* height: calc(50vh - 30vh); */
     background-color: #f3f3f3; 
 }
 
@@ -245,7 +245,10 @@ footer{ /* the foot */
 }
 
 
-
+#podgladObrazu {
+    /* height: 200px; */
+    width: 200px;
+}
 
 
 [class^="icon-"]:before, [class*=" icon-"]:before {

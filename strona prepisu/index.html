@@ -44,33 +44,36 @@
         <article>
                 <header>
                     <h2>
-                        <form action="./form.php" method="post" id="myForms">
+                        <form action="#" method="post" id="myForms">
                             <input type="text" placeholder="Nazwa potrawy" name="nazwa" required>
                             <input type="submit" value="Wyślij">
+                            <input type="reset" value="Wyczyść">
                         </form>
                     </h2>
                 </header>
                 <section class="hasz">
                     <p>
-                        <form action="./form.php" method="post" id="myForms">
+                        <form action="#" method="post" id="myForms">
                             <input type="text" placeholder="hasze" name="hasz" required>
                             <input type="submit" value="Wyślij">
+                            <input type="reset" value="Wyczyść">
                         </form>
                     </p>
                 </section>  
                 <section class="opis">
                     <p>
-                        <form action="./form.php" method="post" id="myForms">
+                        <form action="#" method="post" id="myForms">
                             <input type="text" placeholder="opis" name="opis" required>
                             <input type="submit" value="Wyślij">
+                            <input type="reset" value="Wyczyść">
                         </form>
                     </p>
                 </section>
             
                     <div>
                         <section class="left">
-                            <form action="./form.php" method="post" id="myForm">
-                            
+                            <form action="#" method="post" id="myForm">
+                               
                                     <ul>
                                         <li>
                                             
@@ -80,24 +83,32 @@
                                         <br>
                                             <button type="button" onclick="addFormField()"> +</button>
                                         </br>
+                                        <br>
+                                            <button type="button" onclick="removeFormField()"> -</button>
+                                        </br>
                                         <input type="submit" value="Wyślij">
-
+                                        <input type="reset" value="Wyczyść">
+                                        
+                                   
                             </form> 
                         </section> 
                         <section class="right">
-                            <form action="./form.php" method="post" enctype="multipart/form-data" id="myForms">
+                            <div id="podgladObrazu"></div>
+                            <form action="#" method="post" enctype="multipart/form-data" id="myForms">
                             
                                 <input type="file" placeholder="zdjęcie"  name="zdjecie" accept="image/*">
                                 <input type="submit" value="Wyślij">
+                                <input type="reset" value="Wyczyść">
                             </form> 
                         </section>
                     </div>
                 
                 <section class="Przepis" >
-                <form action="./form.php" method="post" id="myForm">
-                    <input type="text" placeholder="Przepis" name="Przepis"required></input>
-                    <input type="submit" value="Wyślij">
-                </form>
+                    <form action="#" method="post" id="myForm">
+                        <input type="text" placeholder="Przepis" name="Przepis"required></input>
+                        <input type="submit" value="Wyślij">
+                        <input type="reset" value="Wyczyść">
+                    </form>
                 </section> 
                 
 
