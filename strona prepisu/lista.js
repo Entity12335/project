@@ -8,4 +8,6 @@ function addFormField() {
     <input type="text" placeholder="składniki" name="składnik" required>`;
     ul.appendChild(newLi);
     left.style.height = (ul.offsetHeight + 5) + "vh";
+   
+
 }
