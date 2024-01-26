@@ -53,7 +53,11 @@
 
         $tajniak = "6LemdEwpAAAAAA8JTq6gFuSnCPRvV5RWteWtOnQc";
 
+        if(null !==file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$tajniak.'&response='.$_POST['g-recaptcha-response'])){
         $sprawdz = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$tajniak.'&response='.$_POST['g-recaptcha-response']);
+        }else{
+            $_SESSION['e_bot'] = "Potwierdź że nie jesteś botem";
+        }
 
         $odp = json_decode($sprawdz);
 
@@ -161,7 +165,7 @@
                 <h2>Zarejestruj Sie</h2>
             </header>
             <form method="post" action="">
-                <input type="text" id="login" name="login" placeholder="Login">
+                <input type="text" id="login" name="login" placeholder="Login" value="<?= (isset($_POST['login'])) ? $_POST['login'] : ""; ?>">
                 <?php
                     if(isset($_SESSION['e_login'])){
                         echo '<div class="error">'.$_SESSION['e_login'].'</div>';
@@ -182,7 +186,7 @@
                         unset($_SESSION['e_password2']);
                     }
                 ?>
-                <input type="email" id="email" name="email" placeholder="Email">
+                <input type="email" id="email" name="email" placeholder="Email" value="<?= (isset($_POST['email'])) ? $_POST['email'] : ""; ?>">
                 <?php
                     if(isset($_SESSION['e_email'])){
                         echo '<div class="error">'.$_SESSION['e_email'].'</div>';
