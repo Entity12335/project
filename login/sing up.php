@@ -101,7 +101,7 @@
                 //cezar--------------------------------------------
                 if($jest_ok==true){
                     //jest git
-                    if($connection->query("INSERT INTO `users` (`ID`, `Login`, `Hasło`, `Email`) VALUES (NULL, '$login', '$haslo_hasz', '$email');")){
+                    if($connection->query("INSERT INTO `users` (`ID`, `Login`, `Haslo`, `Email`) VALUES (NULL, '$login', '$haslo_hasz', '$email');")){
 
                         $_SESSION['zalogowany']=true;
                         header('Location: ./login.php');
