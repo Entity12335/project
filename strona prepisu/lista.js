@@ -9,7 +9,10 @@
             
             <input type="text" placeholder="składniki" name="składnik" required>`;
             ul.appendChild(newLi);
-            // left.style.height = (ul.offsetHeight + 5) + "vh";
+            let wysokość = document.getElementsByClassName("left");
+            // console.log(wysokość);
+            wysokość.style.height+='5vh';
+            
         }
 
         //przycisk do usuwania elementu
