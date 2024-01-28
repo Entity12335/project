@@ -72,25 +72,26 @@
             
                     <div id="leftRight">
                         <section class="left">
+                           
                             <form action="#" method="post" id="myForm">
-                               
-                                    <ul>
-                                        <li>
-                                            
-                                            <input type="text" placeholder="składniki" name="składnik"  required>
-                                        </li>
-                                    </ul>
-                                        <br>
-                                            <button type="button" onclick="addFormField()" id="przycisk"> +</button>
-                                        </br>
-                                        <br>
-                                            <button type="button" onclick="removeFormField()"> -</button>
-                                        </br>
-                                        <input type="submit" value="Wyślij">
-                                        <input type="reset" value="Wyczyść">
+                                <ul>
+                                    <input type="submit" value="Zapisz">
+                                    <input type="reset" value="Wyczyść">
+                                    <button type="button" onclick="addFormField()" id="przycisk"> nowy składnik</button>
+                                    <li>
                                         
-                                   
+                                        <input type="text" placeholder="składniki" name="składnik"  required>
+                                        <span class="remove-btn" onclick="removeFormField(this)">usuń składnik</span>
+                                       
+                                    </li>
+                                  
+                                        
+                                </ul>
+ 
                             </form> 
+                                
+                     
+                    
                         </section> 
                         <section class="right">
                             <div id="podgladObrazu"></div>
@@ -104,7 +105,7 @@
                     </div>
                 
                 <section class="Przepis" >
-                    <form action="#" method="post" id="myForm">
+                    <form action="#" method="post" id="myForms">
                         <input type="text" placeholder="Przepis" name="Przepis"required></input>
                         <input type="submit" value="Wyślij">
                         <input type="reset" value="Wyczyść">

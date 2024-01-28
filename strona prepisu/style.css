@@ -30,7 +30,7 @@ body > div{ /* header i div z resztą */
     justify-content: space-between;
     background-color: #618B83;
 }
-body form{ /* formularz */
+body form#search{ /* formularz wyszukiwania*/
     height: 5vh;
     border-width: 4px;
     align-items: center;
@@ -189,11 +189,11 @@ main>article>header{
 }
 main>article>div{
     display: flex;
+    
    
 }
 
 .left{
-    
     margin: 10px;
     padding-left: 25px;
     width: calc(55vw - 10vw);
@@ -202,14 +202,14 @@ main>article>div{
    
 }
 
+
 #myForms{
     background-color: #f3f3f3;
+    justify-content: start;
 }
 #myForm{
- 
+    justify-content: start;
     background-color: #f3f3f3;
-
-    
 }
 .right{
     clear: right;
@@ -251,7 +251,12 @@ footer{ /* the foot */
     /* height: 200px; */
     width: 200px;
 }
-
+span{
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 1px;
+    background-color: rgb(221, 219, 219);
+}
 
 [class^="icon-"]:before, [class*=" icon-"]:before {
     font-family: "fontello";
