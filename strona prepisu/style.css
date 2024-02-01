@@ -123,15 +123,11 @@ body > main{
 }
 #leftAside{ /* lewy aside */
     width: 15vw;
-    
-    background-color: #615753;
+    margin: 5px;
+    background-color: #bda198;
 }
 #hasz{ /* hasztagi */
-    border-width: 4px;
-    border-style: solid;
-    border-color: #615753;
-    border-bottom: none;
-    border-top: none;
+   margin: 5px;
     height: 5vh;
     text-align: center;
     align-items: center;
@@ -150,23 +146,20 @@ body > main{
     display: flex;
     align-items: center;
     justify-content: center;
-    border-width: 4px;
+    margin: 5px;
     background-color: #d39179;
-    border-style: solid;
-    border-color: #615753;   
+    
+   
     height: 5vh;
 }
 #patreon:hover{
     background-color: #E07750;
 }
 #ad{ /* reklama */
-    border-width: 4px;
-    background-color: #bda198;
-    height: calc(100vh - 30vh);
-    border-style: solid;
-    border-color: #615753;
-    border-top: none;
-    border-bottom: none;
+    margin: 5px;
+    background-color: #51E0C4;
+    
+
 }
 
 main>article>header{
@@ -228,11 +221,8 @@ main>article>div{
     flex-flow: column;
     width: 15vw;
     background-color: #bda198;
-    border-width: 4px;
-    border-style: solid;
-    border-color: #615753;
-    border-bottom: none;
-    border-top: none;
+ 
+    margin: 5px;
 }
 
 
@@ -243,7 +233,7 @@ footer{ /* the foot */
 
 
 #podgladObrazu {
-    /* height: 200px; */
+    
     width: 200px;
 }
 span{
