@@ -5,71 +5,127 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
+<!-- wyszukiwarka -->
+    <script src="./script.js"></script>
+<!-- dodawanie do listy -->
+    <script src="./lista.js"></script>
 </head> 
 <body>
-    <header>
-        <h1>tytuł strony</h1>
-        <p><a href="#">logowanie</a></p>
-    </header>
-    <nav>
-        <ul>
-            <li>
-                <a href="#">a</a>
-                <ul class="dropdown">
-                    <li><a href="#">a</a></li>
-                    <li><a href="#">a</a></li>
-                    <li><a href="#">a</a></li>
-                    <li><a href="#">a</a></li>
-                    <li><a href="#">a</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">aw</a>
-                <ul class="dropdown">
-                    <li><a href="#">a</a></li>
-                    <li><a href="#">a</a></li>
-                    <li><a href="#">a</a></li>
-                    <li><a href="#">a</a></li>
-                    <li><a href="#">a</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">a</a>
-                <ul class="dropdown">
-                    <li><a href="#">a</a></li>
-                    <li><a href="#">a</a></li>
-                    <li><a href="#">a</a></li>
-                    <li><a href="#">a</a></li>
-                    <li><a href="#">a</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
-    
+    <div>
+        <header>
+            <h1>tytuł strony</h1>
+        </header>
+        <div>
+            <form name="myForm" id="search" >
+                <input type="text" placeholder="Szukaj.." name="Szukaj">
+                <button type="submit" id="butt"><i class="icon-search"></i></button>
+            </form>
+            <a href="#"><i class="icon-plus"></i>new</a> <!-- link do tworzenia strony -->
+            <div id="log">
+                <button id="user"><i class="icon-down-open"></i>placeholder</button> <!-- nazwa użytkownika z bazy danych albo login/sineup -->
+                <div>
+                <a href="../login/login.html">Login</a>
+                <a href="../login/sing up.html">Sing up</a>
+                </div>
+            </div>
+            <a href="../main-site/główna"><i class="icon-left-big"></i>return to main</a>
+        </div>
+    </div>
     <main>
-        <aside>          
+        <aside id="leftAside">
             <ul>
-                <li>
-                    <a href="#">a</a>                
+                <li id="hasz">
+                    <a href="#">########</a>
                 </li>
-                <li>
-                    <a href="#">ab</a>                
-                </li>
-                <li>
-                    <a href="#">a</a>                
-                </li>
+                <li id="patreon"><a href="#">patreon</a></li>
+                <li id="ad"><img src="./giphy.gif" img here alt="ad"></li>
             </ul>
-            <p><a href="#">return to main</a></p>
         </aside>
         <article>
-            <header>
-                <h2>nazwa potrawy</h2>
-            </header>
-            <section>
-                <p>przepis/zdjęcia</p>
-                <p></p>
-            </section>  
+                <header>
+                    <h2>
+                        <form action="#" method="post" id="myForms">
+                            <input type="text" placeholder="Nazwa potrawy" name="nazwa" required>
+                            <input type="submit" value="Wyślij">
+                            <input type="reset" value="Wyczyść">
+                        </form>
+                    </h2>
+                </header>
+                <section class="hasz">
+                    <p>
+                        <form action="#" method="post" id="myForms">
+                            <input type="text" placeholder="hasze" name="hasz" required>
+                            <input type="submit" value="Wyślij">
+                            <input type="reset" value="Wyczyść">
+                        </form>
+                    </p>
+                </section>  
+                <section class="opis">
+                    <p>
+                        <form action="#" method="post" id="myForms">
+                            <input type="text" placeholder="opis" name="opis" required>
+                            <input type="submit" value="Wyślij">
+                            <input type="reset" value="Wyczyść">
+                        </form>
+                    </p>
+                </section>
+            
+                    <div id="leftRight">
+                        <section class="left">
+                           
+                            <form action="#" method="post" id="myForm">
+                                <ul>
+                                    <input type="submit" value="Zapisz">
+                                    <input type="reset" value="Wyczyść">
+                                    <button type="button" onclick="addFormField()" id="przycisk"> nowy składnik</button>
+                                    <li>
+                                        
+                                        <input type="text" placeholder="składniki" name="składnik"  required>
+                                        <span class="remove-btn" onclick="removeFormField(this)">usuń składnik</span>
+                                       
+                                    </li>
+                                    <li>
+                                        
+                                        <input type="text" placeholder="składniki" name="składnik"  required>
+                                        <span class="remove-btn" onclick="removeFormField(this)">usuń składnik</span>
+                                       
+                                    </li>
+                                  
+                                        
+                                </ul>
+ 
+                            </form> 
+                                
+                     
+                    
+                        </section> 
+                        <section class="right">
+                            <div id="podgladObrazu"></div>
+                            <form action="#" method="post" enctype="multipart/form-data" id="myForms">
+                            
+                                <input type="file" placeholder="zdjęcie"  name="zdjecie" accept="image/*">
+                                <input type="submit" value="Wyślij">
+                                <input type="reset" value="Wyczyść">
+                            </form> 
+                        </section>
+                    </div>
+                
+                <section class="Przepis" >
+                    <form action="#" method="post" id="myForms">
+                        <input type="text" placeholder="Przepis" name="Przepis"required></input>
+                        <input type="submit" value="Wyślij">
+                        <input type="reset" value="Wyczyść">
+                    </form>
+                </section> 
+                
+
         </article>
+        <aside id="rightAside">
+                <p>Lorem, ipsum dolor.</p>
+                <p>Autem, tenetur modi?</p>
+                <p>Pariatur, corrupti ipsam?</p>
+                <p>Fuga, dolorum iusto.</p>
+        </aside>
     </main>
     <footer>
         &copy;sfsvhgfytug
