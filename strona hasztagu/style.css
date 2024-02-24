@@ -1,0 +1,233 @@
+@font-face {
+    font-family: 'fontello';
+    src: url('./font/fontello.eot?9312500');
+    src: url('./font/fontello.eot?9312500#iefix') format('embedded-opentype'),
+         url('./font/fontello.woff2?9312500') format('woff2'),
+         url('./font/fontello.woff?9312500') format('woff'),
+         url('./font/fontello.ttf?9312500') format('truetype'),
+         url('./font/fontello.svg?9312500#fontello') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+} 
+
+body > div > header > h1{ /* header */
+    height: 5vh;
+    line-height: 4vh;
+    width: auto;
+    border-width: 4px;
+    border-style: solid;
+    border-color: #618B83;
+    background-color: #618B83;
+}
+body > div{ /* header i div z resztą */
+    display: flex;
+    justify-content: space-between;
+    background-color: #618B83;
+}
+body form#search{ /* formularz wyszukiwania*/
+    height: 5vh;
+    border-width: 4px;
+    align-items: center;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e69c6a;
+    border-style: solid;
+    border-color: #618B83;
+}
+form > input[type=text]{/* formularz input */
+    padding: 6px;
+    font-size: 17px;
+    width: auto;
+    border: none;
+}
+body > div button[type=Submit]{/* formularz przyisk */
+    float: right;
+    padding: 6px 5px;
+    margin-right: 1px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+#user{ /* przycisk menu */
+    border: none;
+    border-width: 4px;
+    border-style: solid;
+    border-color: #618B83;
+    min-width: 6vw;
+    background-color: #e69c6a;
+    height: 5vh;
+}
+#user:hover{ /* podświetlenie menu*/
+    background-color: aqua;
+}
+#log div{
+    display: flex;
+    display: none;
+}
+#log a{
+    min-width: 6vw;
+    border-left: solid;
+    border-right: solid;
+    border-color: #618B83;
+}
+#log:hover div{
+    display: block; 
+    flex-direction: column;
+    position: absolute;
+}
+body > div a{ /*button new*/
+    border-width: 4px;
+    display: block;
+    border-style: solid;
+    border-color: #618B83;
+    border-left: none;
+    border-right: none;
+    height: 5vh;
+    line-height: 4vh;
+    text-align: center;
+    background-color: #e69c6a;
+    width: 5vw;
+    text-decoration: none;
+    color: black;
+}
+body > div a:hover{ /* podświetlenie new */
+    background-color: #E07750;
+}
+body > div a:active{ /* przyciskanie new */
+    color: #f3f3f3;
+}
+body > div > div { /* div > search bar i reszta */
+    display: flex;
+}
+body > main{ 
+    display: flex;
+    list-style: none;
+    padding: 3px;
+    background-color: #615753;
+    
+}
+
+#left > ul{ /* lewy aside wszystko */
+    display: flex;
+    flex-flow: column;
+    list-style: none;
+}
+#leftAside{ /* lewy aside */
+    width: 15vw;
+    margin: 5px;
+    background-color: #bda198;
+}
+#hasz{ /* hasztagi */
+   margin: 5px;
+    height: 5vh;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: #5bcab4;
+}
+#hasz>a{
+    display: block;
+}
+#hasz:hover{
+    background-color: #51E0C4;
+}
+
+#patreon{ /* patreon */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    background-color: #d39179;
+    
+   
+    height: 5vh;
+}
+#patreon:hover{
+    background-color: #E07750;
+}
+#ad{ /* reklama */
+    margin: 5px;
+    background-color: #51E0C4;
+    
+
+}
+
+ 
+
+#rightAside{ /* prawy aside */
+    flex-flow: column;
+    width: 15vw;
+    background-color: #bda198;
+ 
+    margin: 5px;
+}
+
+
+footer{ /* the foot */ 
+    background-color: #615753;
+    height: calc(15vh - 6px);
+}
+
+
+#podgladObrazu {
+    
+    width: 200px;
+}
+span{
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 1px;
+    background-color: rgb(221, 219, 219);
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+    speak: never;
+  
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    /* opacity: .8; */
+  
+    /* For safety - reset parent styles, that can break glyph codes*/
+    font-variant: normal;
+    text-transform: none;
+  
+    /* fix buttons height, for twitter bootstrap */
+    line-height: 1em;
+  
+    /* Animation center compensation - margins should be symmetric */
+    /* remove if not needed */
+    margin-left: .2em;
+  
+    /* you can be more comfortable with increased icons size */
+    /* font-size: 120%; */
+  
+    /* Font smoothing. That was taken from TWBS */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Uncomment for 3D effect */
+    /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+  }
+  
+  .icon-left-big:before { content: '\e800'; } /* '' */
+  .icon-down-open:before { content: '\e801'; } /* '' */
+  .icon-up-open:before { content: '\e802'; } /* '' */
+  .icon-plus:before { content: '\e803'; } /* '' */
+  .icon-search:before { content: '\f50d'; } /* '' */
+  
