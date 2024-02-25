@@ -56,6 +56,7 @@ body > div button[type=Submit]{/* formularz przyisk */
     font-size: 17px;
     border: none;
     cursor: pointer;
+    font-size: smaller;
 }
 #user{ /* przycisk menu */
     border: none;
@@ -98,6 +99,7 @@ body > div a{ /*button new*/
     width: 5vw;
     text-decoration: none;
     color: black;
+    font-size: smaller;
 }
 body > div a:hover{ /* podświetlenie new */
     background-color: #E07750;
@@ -113,6 +115,7 @@ body > main{
     list-style: none;
     padding: 3px;
     background-color: #615753;
+    height: calc(100vh - 13vh);
     
 }
 

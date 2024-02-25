@@ -56,6 +56,7 @@ body > div button[type=Submit]{/* formularz przyisk */
     font-size: 17px;
     border: none;
     cursor: pointer;
+    font-size: smaller;
 }
 #user{ /* przycisk menu */
     border: none;
@@ -98,6 +99,7 @@ body > div a{ /*button new*/
     width: 5vw;
     text-decoration: none;
     color: black;
+    font-size: smaller;
 }
 body > div a:hover{ /* podświetlenie new */
     background-color: #E07750;
@@ -113,6 +115,7 @@ body > main{
     list-style: none;
     padding: 3px;
     background-color: #615753;
+    height: calc(100vh - 13vh);
     
 }
 
@@ -161,14 +164,33 @@ body > main{
     
 
 }
+.hasz{
+    display: flex;
+}
+.hasztag{
+    text-align: center;
+    margin: 30px;
+    /* margin-left: 0px; */
+    width: calc(40vw - 20vw);
+    height: 7vh;
+    background-color: #51E0C4;
+}
+.hasztag:hover{
+    text-align: center;
+    margin: 30px;
+    /* margin-left: 0px; */
+    /* width: calc(50vw - 20vw); */
+    height: 7vh;
+    background-color: #618B83;
+    cursor: pointer;
+}
 
- 
 
 #rightAside{ /* prawy aside */
     flex-flow: column;
     width: 15vw;
     background-color: #bda198;
- 
+    
     margin: 5px;
 }
 
@@ -179,16 +201,6 @@ footer{ /* the foot */
 }
 
 
-#podgladObrazu {
-    
-    width: 200px;
-}
-span{
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 1px;
-    background-color: rgb(221, 219, 219);
-}
 
 [class^="icon-"]:before, [class*=" icon-"]:before {
     font-family: "fontello";
