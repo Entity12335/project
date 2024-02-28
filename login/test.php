@@ -31,7 +31,7 @@ else
         $ilu = $rezultat->num_rows;
         if($ilu>0){
             $wiersz = $rezultat->fetch_assoc();
-            if(password_verify($Password, $wiersz['Hasło'])){
+            if(password_verify($Password, $wiersz['Haslo'])){
 
                 $_SESSION['zalogowany']=true;
         
