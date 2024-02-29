@@ -14,7 +14,7 @@
     margin: 0;
     box-sizing: border-box;
 }
-body > div > header > h1{ /* header */
+body > div > header > h1 > a{ /* header */
     height: 5vh;
     line-height: 4vh;
     width: auto;
@@ -65,7 +65,7 @@ body > div button[type=Submit]{/* formularz przyisk */
     height: 5vh;
 }
 #user:hover{ /* podświetlenie menu*/
-    background-color: aqua;
+    background-color: #E07750;
 }
 #log div{
     display: flex;
@@ -101,7 +101,7 @@ body > div a{ /*button new*/
     color: black;
 }
 div >a:hover{ /* podświetlenie new */
-    background-color: aqua;
+    background-color: #E07750;
 }
 body > div a:active{ /* przyciskanie new */
     color: white;

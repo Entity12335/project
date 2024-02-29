@@ -12,7 +12,9 @@
 <body>
     <div>
         <header>
-            <h1>Nasza Strona ***** *** ( TAK)</h1>
+            <h1>
+                <a href="../main-site/główna.php">Nasza Strona ***** *** ( TAK)</a>
+            </h1>
         </header>
         <div>
             <form name="myForm" id="search" >

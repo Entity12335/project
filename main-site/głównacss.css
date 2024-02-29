@@ -18,7 +18,7 @@
     box-sizing: border-box;
 } 
 
-body > div > header > h1{ /* header */
+body > div > header > h1 > a{ /* header */
     height: 5vh;
     line-height: 4vh;
     width: auto;
@@ -69,7 +69,7 @@ body > div button[type=Submit]{/* formularz przyisk */
     height: 5vh;
 }
 #user:hover{ /* podświetlenie menu*/
-    background-color: aqua;
+    background-color: #E07750;
 }
 #log div{
     display: flex;
@@ -101,7 +101,7 @@ body > div a{ /*button new*/
     text-decoration: none;
     color: black;
 }
-body > div a:hover{ /* podświetlenie new */
+div > a:hover{ /* podświetlenie new */
     background-color: #E07750;
 }
 body > div a:active{ /* przyciskanie new */
@@ -125,10 +125,9 @@ body > main{
 }
 #left{ /* lewy aside */
     width: 15vw;
-    
     background-color: #615753;
 }
-#hasz{ /* hasztagi */
+#hasz>a{ /* hasztagi */
     border-width: 4px;
     border-style: solid;
     border-color: #615753;
@@ -141,14 +140,14 @@ body > main{
     display: flex;
     background-color: #5bcab4;
 }
-#hasz>a{
+#hasz>a>div{
     display: block;
 }
-#hasz:hover{
+#hasz > a:hover{
     background-color: #51E0C4;
 }
 
-#patreon{ /* patreon */
+#patreon>a{ /* patreon */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -158,7 +157,7 @@ body > main{
     border-color: #615753;   
     height: 5vh;
 }
-#patreon:hover{
+#patreon> a:hover{
     background-color: #E07750;
 }
 #ad{ /* reklama */
@@ -169,6 +168,8 @@ body > main{
     border-color: #615753;
     border-top: none;
     border-bottom: none;
+    display: flex;
+    justify-content: center;
 }
 
 main > article{ /* treść */
