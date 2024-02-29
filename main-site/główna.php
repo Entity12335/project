@@ -35,13 +35,13 @@
         </div>
     </div>
     <main>
-        <aside class="left">
+        <aside id="left">
             <ul>
                 <li id="hasz">
                     <a href="#">########</a>
                 </li>
                 <li id="patreon"><a href="#">patreon</a></li>
-                <li id="ad"><img src="reklamaIMGhere" img here alt="ad"></li>
+                <li id="ad"><img src="./giphy.gif" img here alt="ad"></li>
             </ul>
         </aside>
         <article>
