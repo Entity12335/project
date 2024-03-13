@@ -187,10 +187,8 @@ body > main{
 
 
 #rightAside{ /* prawy aside */
-    flex-flow: column;
     width: 15vw;
     background-color: #bda198;
-    
     margin: 5px;
 }
 
