@@ -70,28 +70,24 @@
         //powturzenia--------------------------------------
 
         require_once"connect.php";
-        mysqli_report(MYSQLI_REPORT_STRICT);
 
         try{
-            $connection = new mysqli($host,$db_user,"$db_password",$db_name);
-            if ($connection->connect_errno!=0) {
-                throw new Exception(mysqli_connect_errno());
-            }else{
+            $connection = new PDO($dsn, $db_user, $db_password);
                 //email-----------------------
-                $rezultat = $connection->query("SELECT id FROM users WHERE email='$email'") ;
-                if (!$rezultat) throw new Exception($connection->error);
-
-                $ile_emaili = $rezultat->num_rows;
+                $rezultat = $connection->prepare("SELECT ID FROM users WHERE `Email`=:email") ;
+                $rezultat->bindParam(':email',$email);
+                $rezultat->execute();
+                $ile_emaili = $rezultat->rowCount();
                 
                 if ($ile_emaili>0){
                     $jest_ok=false;
                     $_SESSION['e_email']="Istnieje już konto na tym e-mailu";
                 }
                 //login-----------------------
-                $rezultat = $connection->query("SELECT id FROM users WHERE Login='$login'") ;
-                if (!$rezultat) throw new Exception($connection->error);
-
-                $ile_loginów = $rezultat->num_rows;
+                $rezultat = $connection->prepare("SELECT ID FROM users WHERE `Login`=:login") ;
+                $rezultat->bindParam(':login',$login);
+                $rezultat->execute();
+                $ile_loginów = $rezultat->rowCount();
                 
                 if ($ile_loginów>0){
                     $jest_ok=false;
@@ -101,22 +97,21 @@
                 //cezar--------------------------------------------
                 if($jest_ok==true){
                     //jest git
-                    if($connection->query("INSERT INTO `users` (`ID`, `Login`, `Haslo`, `Email`) VALUES (NULL, '$login', '$haslo_hasz', '$email');")){
+                    $cezar = $connection->prepare("INSERT INTO `users` (`ID`, `Login`, `Haslo`, `Email`) VALUES (NULL, :login, :haslo_hasz, :email);");
+                    $cezar->bindParam(':login',$login);
+                    $cezar->bindParam(':haslo_hasz',$haslo_hasz);
+                    $cezar->bindParam(':email',$email);
+                    $cezar->execute();
 
-                        $_SESSION['zalogowany']=true;
-                        header('Location: ./login.php');
-                        exit();
+                    $_SESSION['zalogowany']=true;
+                    header('Location: ./login.php');
+                    exit();
 
-                    }else{
-
-                        throw new Exception($connection->error);
-
-                    }
+                    
                 }
-                $connection->close();
-            }
+                unset($connection);
         }
-        catch(Exception $e){
+        catch(PDOException $e){
             echo '<span class="error">Błąd servera</span>';
             echo '<br /> dev info: '.$e;
         }
