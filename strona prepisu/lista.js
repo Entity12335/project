@@ -2,11 +2,19 @@ window.addEventListener("DOMContentLoaded", () => {
     let temp = document.querySelector("#liTemp");
     let ul = document.querySelector('#ul');
     let butt = document.querySelector('#przycisk');
+    
+    let buttRemove = document.querySelectorAll(".remove-btn");
+    
     butt.addEventListener("click",()=>{
         let clone = temp.content.cloneNode(true);
         console.log("tak")
         ul.appendChild(clone);
-        console.log(ul.childNodes)
-        
+        buttRemove = document.querySelectorAll(".remove-btn");
+        buttRemove.forEach(el => {
+            el.addEventListener("click",()=>{
+                ul.removeChild(el.parentNode);
+                buttRemove = document.querySelectorAll(".remove-btn");
+            });
+        });
     });
 });
