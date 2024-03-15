@@ -46,8 +46,8 @@
                     <h2>
                         <form action="#" method="post" id="myForms">
                             <input type="text" placeholder="Nazwa potrawy" name="nazwa" required>
-                            <input type="submit" value="Wyślij">
-                            <input type="reset" value="Wyczyść">
+                            
+                            
                         </form>
                     </h2>
                 </header>
@@ -55,8 +55,8 @@
                     <p>
                         <form action="#" method="post" id="myForms">
                             <input type="text" placeholder="hasze" name="hasz" required>
-                            <input type="submit" value="Wyślij">
-                            <input type="reset" value="Wyczyść">
+                            
+                            
                         </form>
                     </p>
                 </section>  
@@ -64,8 +64,8 @@
                     <p>
                         <form action="#" method="post" id="myForms">
                             <input type="text" placeholder="opis" name="opis" required>
-                            <input type="submit" value="Wyślij">
-                            <input type="reset" value="Wyczyść">
+                            
+                            
                         </form>
                     </p>
                 </section>
@@ -74,25 +74,9 @@
                         <section class="left">
                            
                             <form action="#" method="post" id="myForm">
-                                <ul>
-                                    <input type="submit" value="Zapisz">
-                                    <input type="reset" value="Wyczyść">
-                                    <button type="button" onclick="addFormField()" id="przycisk"> nowy składnik</button>
-                                    <li>
-                                        
-                                        <input type="text" placeholder="składniki" name="składnik"  required>
-                                        <span class="remove-btn" onclick="removeFormField(this)">usuń składnik</span>
-                                       
-                                    </li>
-                                    <li>
-                                        
-                                        <input type="text" placeholder="składniki" name="składnik"  required>
-                                        <span class="remove-btn" onclick="removeFormField(this)">usuń składnik</span>
-                                       
-                                    </li>
-                                  
-                                        
-                                </ul>
+                                <input type="button" value="nowy składnik" id="przycisk">
+                                <template id="liTemp"><li><input type="text" placeholder="składniki" name="składnik"  required><span class="remove-btn">usuń składnik</span></li></template>
+                                <ul id="ul"></ul>
  
                             </form> 
                                 
@@ -104,8 +88,8 @@
                             <form action="#" method="post" enctype="multipart/form-data" id="myForms">
                             
                                 <input type="file" placeholder="zdjęcie"  name="zdjecie" accept="image/*">
-                                <input type="submit" value="Wyślij">
-                                <input type="reset" value="Wyczyść">
+                                
+                                
                             </form> 
                         </section>
                     </div>
@@ -113,8 +97,8 @@
                 <section class="Przepis" >
                     <form action="#" method="post" id="myForms">
                         <input type="text" placeholder="Przepis" name="Przepis"required></input>
-                        <input type="submit" value="Wyślij">
-                        <input type="reset" value="Wyczyść">
+                        
+                        
                     </form>
                 </section> 
                 

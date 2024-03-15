@@ -1,27 +1,12 @@
-
-
-//dodawanie elementu
-function addFormField() {
+window.addEventListener("DOMContentLoaded", () => {
+    let temp = document.querySelector("#liTemp");
+    let ul = document.querySelector('#ul');
+    let butt = document.querySelector('#przycisk');
+    butt.addEventListener("click",()=>{
+        let clone = temp.content.cloneNode(true);
+        console.log("tak")
+        ul.appendChild(clone);
+        console.log(ul.childNodes)
         
-    var form = document.getElementById("myForm");
-    var ul = form.querySelector("ul");
-    var newLi = document.createElement("li");
-    newLi.innerHTML = `
-    <input type="text" placeholder="składniki" name="składnik" required>
-    <span class="remove-btn" onclick="removeFormField(this)">usuń składnik</span>
-    `;
-    ul.appendChild(newLi);
-    };
-
-//przycisk do usuwania elementu
-    function removeFormField(element) {
-        var form = document.getElementById("myForm");
-        var ul = form.querySelector("ul");
-        var li = element.parentNode;
-        ul.removeChild(li);
-    }
-// do podglądu obrazu
-//scieżka ma byc z value z wybranego elementu
-// let sciezka = '';
-// #podgladObrazu.style.backgroundImage = sciezka;
-
+    });
+});
