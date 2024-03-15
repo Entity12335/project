@@ -53,7 +53,7 @@ body > div button[type=Submit]{/* formularz przyisk */
     padding: 6px 5px;
     margin-right: 1px;
     background: #ddd;
-    font-size: 17px;
+    font-size: 15px;
     border: none;
     cursor: pointer;
 }
@@ -99,16 +99,21 @@ body > div a{ /*button new*/
     text-decoration: none;
     color: black;
 }
+
 body > div a:hover{ /* podświetlenie new */
     background-color: #E07750;
 }
+
 body > div a:active{ /* przyciskanie new */
     color: #f3f3f3;
 }
+
 body > div > div { /* div > search bar i reszta */
     display: flex;
 }
+
 body > main{ 
+    min-height: 80.6vh;
     display: flex;
     list-style: none;
     padding: 3px;
@@ -122,7 +127,7 @@ body > main{
     list-style: none;
 }
 #leftAside{ /* lewy aside */
-    width: 15vw;
+    min-width: 15vw;
     margin: 5px;
     background-color: #bda198;
 }
@@ -162,66 +167,56 @@ body > main{
 
 }
 
-main>article>header{
-    width: calc(100vw - 30vw);
+textarea{
+    margin: 10px;
+    margin-bottom: 0;
+    justify-content: start;
+    height: 30px;
+    width: 67vw;
+    border-style: none;
+    padding: 5px;
+    font-size: 17px;
     background-color: #f3f3f3;
-    margin: 10px;
 }
-.hasz{ 
-    margin: 10px;
-    width: calc(100vw - 30vw);
-    height: calc(50.2vh - 30vh);
-    background-color: #f3f3f3; 
+
+#formOpis{
+    min-height: 20vh;
 }
-.opis{ /* opis */
-    margin: 10px;
-    width: calc(100vw - 30vw);
-    height: calc(50vh - 30vh); 
-    background-color: #f3f3f3; 
+
+#formPrzepis{
+    min-height: 41vh;
 }
-main>article>div{
+
+
+main>article>form>div{
     display: flex;
+    width: 67vw;
+    margin: 10px;
+
 }
 
 .left{
-    margin: 10px;
+    min-width: calc(55vw - 12vw);
     padding-left: 25px;
-    width: calc(55vw - 10vw);
+    margin-right: 10px;
     background-color: #f3f3f3;
 }
 
-
-#myForms{
-    background-color: #f3f3f3;
-    justify-content: start;
-}
-#myForm{
-    justify-content: start;
-    background-color: #f3f3f3;
-}
 .right{
     clear: right;
-    margin: 10px;
-    margin-left: 0px;
-
     width: calc(34.3vw - 10vw);
 
     background-color: #f3f3f3;
+
+    justify-content: start;
     
 }
-.Przepis{ /* treść */
-    
-    margin: 10px;
-    width: calc(100vw - 30vw);
-    height: calc(50vh - 30vh);
-    background-color: #f3f3f3; 
-}
+
 
 #rightAside{ /* prawy aside */
     flex-flow: column;
-    width: 15vw;
-    background-color: #bda198;
- 
+    min-width: 15vw;
+    background-color: #bda198; 
     margin: 5px;
 }
 

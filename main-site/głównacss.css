@@ -124,7 +124,7 @@ body > main{
     list-style: none;
 }
 #left{ /* lewy aside */
-    width: 15vw;
+    min-width: 15vw;
     background-color: #615753;
 }
 #hasz>a{ /* hasztagi */
@@ -221,7 +221,7 @@ main > article{ /* treść */
 
 #right{ /* prawy aside */
     flex-flow: column;
-    width: 15vw;
+    min-width: 15vw;
     background-color: #bda198;
     border-width: 4px;
     border-style: solid;
