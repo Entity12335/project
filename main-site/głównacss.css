@@ -18,7 +18,7 @@
     box-sizing: border-box;
 } 
 
-body > div > header > h1{ /* header */
+body > div > header > h1 > a{ /* header */
     height: 5vh;
     line-height: 4vh;
     width: auto;
@@ -69,7 +69,7 @@ body > div button[type=Submit]{/* formularz przyisk */
     height: 5vh;
 }
 #user:hover{ /* podświetlenie menu*/
-    background-color: aqua;
+    background-color: #E07750;
 }
 #log div{
     display: flex;
@@ -101,7 +101,7 @@ body > div a{ /*button new*/
     text-decoration: none;
     color: black;
 }
-body > div a:hover{ /* podświetlenie new */
+div > a:hover{ /* podświetlenie new */
     background-color: #E07750;
 }
 body > div a:active{ /* przyciskanie new */
@@ -115,19 +115,19 @@ body > main{
     list-style: none;
     padding: 3px;
     background-color: #615753;
+    
 }
 
-.left > ul{ /* lewy aside wszystko */
+#left > ul{ /* lewy aside wszystko */
     display: flex;
     flex-flow: column;
     list-style: none;
 }
-.left{ /* lewy aside */
+#left{ /* lewy aside */
     width: 15vw;
-    text-align: center;
     background-color: #615753;
 }
-#hasz{ /* hasztagi */
+#hasz>a{ /* hasztagi */
     border-width: 4px;
     border-style: solid;
     border-color: #615753;
@@ -140,14 +140,14 @@ body > main{
     display: flex;
     background-color: #5bcab4;
 }
-#hasz>a{
+#hasz>a>div{
     display: block;
 }
-#hasz:hover{
+#hasz > a:hover{
     background-color: #51E0C4;
 }
 
-#patreon{ /* patreon */
+#patreon>a{ /* patreon */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -157,7 +157,7 @@ body > main{
     border-color: #615753;   
     height: 5vh;
 }
-#patreon:hover{
+#patreon> a:hover{
     background-color: #E07750;
 }
 #ad{ /* reklama */
@@ -168,18 +168,55 @@ body > main{
     border-color: #615753;
     border-top: none;
     border-bottom: none;
+    display: flex;
+    justify-content: center;
 }
 
 main > article{ /* treść */
     width: calc(100vw - 30vw);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: #f3f3f3;
 }
 
 #rick{ /*rick*/
     display: none;
+}
+.hasz{ 
+    margin: 10px;
+    width: calc(100vw - 30vw);
+    /* height: calc(107.2vh - 30vh); */
+    background-color: #f3f3f3; 
+}
+.opis{ /* opis */
+    margin: 10px;
+    width: calc(100vw - 30vw);
+    height: calc(50vh - 30vh); 
+
+    background-color: #f3f3f3; 
+}
+.left{
+    margin: 10px;
+    padding-left: 25px;
+    width: calc(50vw - 10vw);
+    height: calc(60vh- 5vh);
+    background-color: #f3f3f3;
+    float: left;
+    
+}
+.right{
+    margin: 10px;
+    margin-left: 0px;
+    margin-right: calc(20vw- 5vw);
+    width: calc(35vw - 10vw);
+    /* height: calc(40vh- 5vh); */
+    background-color: #f3f3f3;
+    float: right;
+}
+.Przepis{ /* treść */
+    float: left;
+    margin: 10px;
+    width: calc(100vw - 30vw);
+    height: calc(50vh - 30vh);
+    background-color: #f3f3f3; 
 }
 
 #right{ /* prawy aside */

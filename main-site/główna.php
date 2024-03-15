@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -10,7 +12,9 @@
 <body>
     <div>
         <header>
-            <h1>Nasza Strona ***** *** ( TAK)</h1>
+            <h1>
+                <a href="../main-site/główna.php">Nasza Strona ***** *** ( TAK)</a>
+            </h1>
         </header>
         <div>
             <form name="myForm" id="search" >
@@ -21,20 +25,25 @@
             <div id="log">
                 <button id="user"><i class="icon-down-open"></i>placeholder</button> <!-- nazwa użytkownika z bazy danych albo login/sineup -->
                 <div>
-                <a href="../login/login.html">Login</a>
-                <a href="../login/sing up.html">Sing up</a>
+                    <?php
+                        if((isset($_SESSION['zalogowany'])&&($_SESSION['zalogowany']))){
+                            echo@'<a href="../logout.php">Wyloguj</a>';
+                        }else{
+                            echo '<a href="../login/login.php">Login</a><a href="../login/sing up.php">Sing up</a>';
+                        }
+                    ?>
                 </div>
             </div>
         </div>
     </div>
     <main>
-        <aside class="left">
+        <aside id="left">
             <ul>
                 <li id="hasz">
                     <a href="#">########</a>
                 </li>
                 <li id="patreon"><a href="#">patreon</a></li>
-                <li id="ad"><img src="reklamaIMGhere" img here alt="ad"></li>
+                <li id="ad"><img src="./giphy.gif" img here alt="ad"></li>
             </ul>
         </aside>
         <article>

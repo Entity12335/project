@@ -9,12 +9,12 @@
     font-weight: normal;
     font-style: normal;
   }
-*{
+  *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-body > div > header > h1{ /* header */
+body > div > header > h1 > a{ /* header */
     height: 5vh;
     line-height: 4vh;
     width: auto;
@@ -65,7 +65,7 @@ body > div button[type=Submit]{/* formularz przyisk */
     height: 5vh;
 }
 #user:hover{ /* podświetlenie menu*/
-    background-color: aqua;
+    background-color: #E07750;
 }
 #log div{
     display: flex;
@@ -101,7 +101,7 @@ body > div a{ /*button new*/
     color: black;
 }
 div >a:hover{ /* podświetlenie new */
-    background-color: aqua;
+    background-color: #E07750;
 }
 body > div a:active{ /* przyciskanie new */
     color: white;
@@ -171,16 +171,23 @@ article > form > input{
     font-size: 17px;
     padding-left: 3px;
 } 
-article > form > div{
+label{
+    display: flex;
+    justify-content: center;
+}
+label>p{
+    padding-left: 5px;
+}
+article > form > #przy{
     display: flex;
     padding-top: 2vh;
     justify-content: space-evenly;
 }
-article > form > div > input{
+article > form > #przy > input{
     padding: 5px;
     width: 35%;
 }
-article > form > div > button{
+article > form > #przy > button{
     width: 30%;
 }
 #right{ /* prawy aside */
@@ -201,6 +208,13 @@ footer > div{ /* dancin cockroach*/
 footer{ /* the foot */ 
     background-color: #615753;
     height: calc(15vh - 3px);
+}
+
+
+.error{
+    color: red;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 

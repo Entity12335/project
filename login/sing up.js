@@ -1,12 +1,14 @@
 window.addEventListener("DOMContentLoaded",()=>{
-    let clicked = false
-    document.querySelector("#seepass").addEventListener("click",()=>{
-        if(clicked == false){
-        document.querySelector("#password").type = "text"
-        clicked = true
-        }else{
-        document.querySelector("#password").type = "password"
-        clicked = false
-        }
+    const togglePassword = document.querySelector("#seepass");
+    const password1 = document.querySelector("#password1");
+    const password2 = document.querySelector("#password2");
+
+    togglePassword.addEventListener("click",() => {
+        
+        const type1 = password1.getAttribute("type") === "password" ? "text" : "password";
+        const type2 = password2.getAttribute("type") === "password" ? "text" : "password";
+        
+        password1.setAttribute("type", type1);
+        password2.setAttribute("type", type2);
     })
 })
