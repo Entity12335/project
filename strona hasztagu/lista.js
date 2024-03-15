@@ -3,8 +3,8 @@
 //dodawanie elementu
 function addFormField() {
         
-    var form = document.getElementById("myForm");
-    var section = form.querySelector("hasz");
+    var form = document.querySelector("#myForm");
+    var section = form.querySelector(".hasz");
     var newA = document.createElement("hasztag");
     newA.innerHTML = `
     <a href="../strona prepisu/index.html"  class="hasztag" >  

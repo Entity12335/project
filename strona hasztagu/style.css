@@ -118,7 +118,9 @@ body > main{
     height: calc(100vh - 13vh);
     
 }
-
+article{
+    width: 70vw;
+}
 #left > ul{ /* lewy aside wszystko */
     display: flex;
     flex-flow: column;
