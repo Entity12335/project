@@ -187,6 +187,11 @@ textarea{
     min-height: 41vh;
 }
 
+#myForms{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 
 main>article>form>div{
     display: flex;
