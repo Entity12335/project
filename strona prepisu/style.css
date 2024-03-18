@@ -172,7 +172,7 @@ textarea{
     margin-bottom: 0;
     justify-content: start;
     height: 30px;
-    width: 67vw;
+    width: 60vw;
     border-style: none;
     padding: 5px;
     font-size: 17px;
@@ -190,13 +190,14 @@ textarea{
 
 main>article>form>div{
     display: flex;
-    width: 67vw;
+    justify-content: space-between;
+    width: 60vw;
     margin: 10px;
 
 }
 
 .left{
-    min-width: calc(55vw - 12vw);
+    min-width: 33vw;
     padding-left: 25px;
     margin-right: 10px;
     background-color: #f3f3f3;
@@ -204,7 +205,7 @@ main>article>form>div{
 
 .right{
     clear: right;
-    width: calc(34.3vw - 10vw);
+    width: 26vw;
 
     background-color: #f3f3f3;
 
