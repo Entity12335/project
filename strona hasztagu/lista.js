@@ -1,30 +1,27 @@
 
-
-//dodawanie elementu
-function addFormField() {
+//function addFormField() {
         
-    var form = document.querySelector("#myForm");
-    var section = form.querySelector(".hasz");
-    var newA = document.createElement("hasztag");
-    newA.innerHTML = `
-    <a href="../strona prepisu/index.html"  class="hasztag" >  
-                    <div>
-                    #hasz1
-                    </div>
-                </a>
-    `;
-    section.appendChild(newA);
-    };
+    // var form = document.getElementById("myForm");
+    // var section = form.getElementsByClassName("hasztag");
+    // var newA = document.getElementsByClassName("hasz");
+    // newA.innerHTML = `
+    // <a href="../strona prepisu/index.html"  class="hasztag" >  
+    //               #hasz
+    //             </a>
+    // `;
+    // section.appendChild(newA);
+    // };
 
-//przycisk do usuwania elementu
-    // function removeFormField(element) {
-    //     var form = document.getElementById("myForm");
-    //     var ul = form.querySelector("ul");
-    //     var li = element.parentNode;
-    //     ul.removeChild(li);
-    // }
-// do podglądu obrazu
-//scieżka ma byc z value z wybranego elementu
-// let sciezka = '';
-// #podgladObrazu.style.backgroundImage = sciezka;
-
+function addHashtagElement() {
+    var newHashtag = document.createElement("a");
+    newHashtag.setAttribute("href", "../strona prepisu/index.html");
+    newHashtag.classList.add("hasztag");
+    newHashtag.textContent = "hasz";  
+    var section = document.querySelector("article");
+    section.appendChild(newHashtag);
+}
+function addButtonClick() {
+    addHashtagElement();
+}
+var button = document.querySelector("przycisk");
+button.addEventListener("click", addButtonClick);
