@@ -140,7 +140,7 @@
                 <input type="text" placeholder="Szukaj.." name="Szukaj">
                 <button type="submit" id="butt"><i class="icon-search"></i></button>
             </form>
-            <a href="#"><i class="icon-plus"></i>new</a> <!-- link do tworzenia strony -->
+            <a href="../strona prepisu/index.php"><i class="icon-plus"></i>new</a> <!-- link do tworzenia strony -->
             <div id="log">
                 <button id="user"><i class="icon-down-open"></i>placeholder</button> 
                 <div>

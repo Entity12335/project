@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="./style.css">
 <!-- wyszukiwarka -->
     <script src="./script.js"></script>
-<!-- dodawanie do listy -->
-    <script src="./lista.js"></script>
+<!-- dodawanie do listy i prewiue image -->
+    <script src="./lista_image.js"></script>
 <!-- resizing -->
     <script src="./resize.js"></script>
 </head> 
@@ -22,7 +22,7 @@
                 <input type="text" placeholder="Szukaj.." name="Szukaj">
                 <button type="submit" id="butt"><i class="icon-search"></i></button>
             </form>
-            <a href="#"><i class="icon-plus"></i>new</a> <!-- link do tworzenia strony -->
+            <label for="submit-form" tabindex="0"><i class="icon-plus"></i>Wyśli</label><!-- link do tworzenia strony -->
             <div id="log">
                 <button id="user"><i class="icon-down-open"></i>placeholder</button> <!-- nazwa użytkownika z bazy danych albo login/sineup -->
                 <div>
@@ -30,7 +30,7 @@
                 <a href="../login/sing up.html">Sing up</a>
                 </div>
             </div>
-            <a href="../main-site/główna"><i class="icon-left-big"></i>return to main</a>
+            <a href="../main-site/główna.php"><i class="icon-left-big"></i>return</a>
         </div>
     </div>
     <main>
@@ -44,7 +44,7 @@
             </ul>
         </aside>
         <article>
-            <form action="#" method="post" id="myForms">
+            <form action="#" method="post" id="myForms" name="wszystko">
 
                             <textarea id="formName" placeholder="Nazwa potrawy" name="nazwa" rows="1" required></textarea>
 
@@ -65,15 +65,13 @@
                                 <ul id="ul"><li><input type="text" placeholder="składniki" name="składnik"  required><input type="button" class="remove-btn" value="ususń składnik"></li></ul>
                         </div> 
                         <div class="right">
-                            <div id="podgladObrazu"></div>
-                            <form action="#" method="post" enctype="multipart/form-data" id="myForms">
-                            
-                                <input type="file" placeholder="zdjęcie"  name="zdjecie" accept="image/*">
-
+                            <input name="formImage" type="file" accept="image/*" onchange="loadFile(event)">
+                            <img id="output">
                         </div>
                     </div>
 
                         <textarea id="formPrzepis"placeholder="Przepis" name="Przepis" rows="1"required></textarea>
+                        <input type="submit" id="submit-form" hidden >
          
             </form>
 
