@@ -16,6 +16,13 @@
     box-sizing: border-box;
 } 
 
+.error{
+    color: red;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
 body > div > header > h1{ /* header */
     height: 5vh;
     line-height: 4vh;

@@ -1,3 +1,54 @@
+<?php
+    session_start();
+
+    require_once "../login/connect.php";
+
+    // if(($_SESSION['zalogowany']!=true)){
+    //     header('Location: ../login/login.php');
+    //     exit();
+    // }
+
+    try {
+        $pdo = new PDO($dsn, $db_user, $db_password);
+    } catch(PDOException $e) {
+        echo $e->getMessage();
+    }
+    if(isset($_POST['submit'])){
+        $Tytul = $_POST['nazwa'];
+        $Opis = $_POST['opis'];
+        $Skladniki = implode('&',$_POST['składnik']);
+        $Img = $_POST['Img'];
+        $Przepis = $_POST['Przepis'];
+        try{
+            $jest_ok = true;
+            $try = $pdo->prepare("SELECT IDart FROM artykuly WHERE `Tytul`=:Tytul");
+            $try->bindParam(':Tytul',$Tytul);
+            $try->execute();
+
+            $ile_tytulow = $try->rowCount();
+
+            if ($ile_tytulow>0){
+                $jest_ok=false;
+                $_SESSION['e_tytul']="Istnieje już przepis na tą potrawe";
+            }
+
+            if($jest_ok){
+                $cezar = $pdo->prepare("INSERT INTO artykuly (`IDart`, `Tytul`, `Opis`, `Skladniki`, `Img`, `Przepis`) VALUES (NULL, :Tytul, :Opis, :Skladniki, :Img, :Przepis);");
+                $cezar->bindParam(':Tytul',$Tytul);
+                $cezar->bindParam(':Opis',$Opis);
+                $cezar->bindParam(':Skladniki',$Skladniki);
+                $cezar->bindParam(':Img',$Img);
+                $cezar->bindParam(':Przepis',$Przepis);
+                $cezar->execute();
+
+                header('Location: ../main-site/główna.php');
+                    exit();
+            }
+        }   catch(PDOException $e){
+            echo $e->getMessage();
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,34 +95,37 @@
             </ul>
         </aside>
         <article>
-            <form action="#" method="post" id="myForms" name="wszystko">
+            <form action="./index.php" method="post" id="myForms" name="wszystko">
 
-                            <textarea id="formName" placeholder="Nazwa potrawy" name="nazwa" rows="1" required></textarea>
-
+                            <textarea id="formName" placeholder="Nazwa potrawy" name="nazwa" rows="1" required><?= (isset($_POST['nazwa'])) ? $_POST['nazwa'] : ""; ?></textarea>
+                            <?php if(isset($_SESSION['e_tytul'])){
+                                    echo '<div class="error">'.$_SESSION['e_tytul'].'</div>';
+                                    unset($_SESSION['e_tytul']);
+                                }?>
                 
                         
-                            <textarea id="formHasz" placeholder="hasze" name="hasz" rows="1" required></textarea>
+                            <textarea id="formHasz" placeholder="hasze" name="hasz" rows="1" required><?= (isset($_POST['hasz'])) ? $_POST['hasz'] : ""; ?></textarea>
                             
                  
 
-                            <textarea id="formOpis" placeholder="opis" name="opis" rows="1" required></textarea>
+                            <textarea id="formOpis" placeholder="opis" name="opis" rows="1" required><?= (isset($_POST['opis'])) ? $_POST['opis'] : ""; ?></textarea>
                             
                             
             
                     <div id="leftRight">
                         <div class="left">
                                 <input type="button" value="nowy składnik" id="przycisk">
-                                <template id="liTemp"><li><input type="text" placeholder="składniki" name="składnik"  required><input type="button"class="remove-btn" value="ususń składnik"></li></template>
-                                <ul id="ul"><li><input type="text" placeholder="składniki" name="składnik"  required><input type="button" class="remove-btn" value="ususń składnik"></li></ul>
+                                <template id="liTemp"><li><input type="text" placeholder="składniki" name="składnik[]"  required><input type="button"class="remove-btn" value="ususń składnik"></li></template>
+                                <ul id="ul"><li><input type="text" placeholder="składniki" name="składnik[]"  required><input type="button" class="remove-btn" value="ususń składnik"></li></ul>
                         </div> 
                         <div class="right">
-                            <input name="formImage" type="file" accept="image/*" onchange="loadFile(event)">
+                            <input name="Img" type="file" accept="image/*" onchange="loadFile(event)" required>
                             <img id="output">
                         </div>
                     </div>
 
-                        <textarea id="formPrzepis"placeholder="Przepis" name="Przepis" rows="1"required></textarea>
-                        <input type="submit" id="submit-form" hidden >
+                        <textarea id="formPrzepis"placeholder="Przepis" name="Przepis" rows="1"required><?= (isset($_POST['Przepis'])) ? $_POST['Przepis'] : ""; ?></textarea>
+                        <input type="submit" name="submit" id="submit-form" hidden >
          
             </form>
 

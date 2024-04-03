@@ -69,7 +69,7 @@
         }
         //powturzenia--------------------------------------
 
-        require_once"connect.php";
+        require_once "connect.php";
 
         try{
             $connection = new PDO($dsn, $db_user, $db_password);
