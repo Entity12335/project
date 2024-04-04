@@ -23,6 +23,7 @@
 }
 
 
+
 body > div > header > h1{ /* header */
     height: 5vh;
     line-height: 4vh;
@@ -156,9 +157,8 @@ body > main{
    margin: 5px;
     height: 5vh;
     text-align: center;
-    align-items: center;
-    justify-content: center;
-    display: flex;
+    display: block;
+    line-height: 4vh;
     background-color: #5bcab4;
 }
 #hasz>a{
@@ -169,12 +169,11 @@ body > main{
 }
 
 #patreon{ /* patreon */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
+    line-height: 5vh;
     margin: 5px;
     background-color: #d39179;
-    
+    text-align: center;
    
     height: 5vh;
 }
@@ -184,10 +183,15 @@ body > main{
 #ad{ /* reklama */
     margin: 5px;
     background-color: #51E0C4;
-    
+    height: 70vh;
 
 }
 
+#ad img{
+    width: 100%;
+    height: 100%;
+
+}
 textarea{
     margin: 10px;
     margin-bottom: 0;
@@ -261,12 +265,6 @@ footer{ /* the foot */
 #podgladObrazu {
     
     width: 200px;
-}
-span{
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 1px;
-    background-color: rgb(221, 219, 219);
 }
 
 

@@ -17,7 +17,13 @@
     margin: 0;
     box-sizing: border-box;
 } 
-
+img{
+    width: 14.4vw;
+    height: 100%;
+}
+span{
+    background: none;
+}
 body > div > header > h1 > a{ /* header */
     height: 5vh;
     line-height: 4vh;
@@ -168,7 +174,7 @@ body > main{
     border-color: #615753;
     border-top: none;
     border-bottom: none;
-    display: flex;
+    display: block;
     justify-content: center;
 }
 

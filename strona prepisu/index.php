@@ -3,10 +3,10 @@
 
     require_once "../login/connect.php";
 
-    // if(($_SESSION['zalogowany']!=true)){
-    //     header('Location: ../login/login.php');
-    //     exit();
-    // }
+    if(($_SESSION['zalogowany']!=true)){
+        header('Location: ../login/login.php');
+        exit();
+    }
 
     try {
         $pdo = new PDO($dsn, $db_user, $db_password);
@@ -24,6 +24,7 @@
             $try = $pdo->prepare("SELECT IDart FROM artykuly WHERE `Tytul`=:Tytul");
             $try->bindParam(':Tytul',$Tytul);
             $try->execute();
+
 
             $ile_tytulow = $try->rowCount();
 
@@ -71,17 +72,17 @@
         <div>
             <form name="myForm" id="search" >
                 <input type="text" placeholder="Szukaj.." name="Szukaj">
-                <button type="submit" id="butt"><i class="icon-search"></i></button>
+                <button type="submit" id="butt"><span class="icon-search"></span></button>
             </form>
-            <label for="submit-form" tabindex="0"><i class="icon-plus"></i>Wyśli</label><!-- link do tworzenia strony -->
+            <label for="submit-form" tabindex="0"><span class="icon-plus"></span>Wyśli</label><!-- link do tworzenia strony -->
             <div id="log">
-                <button id="user"><i class="icon-down-open"></i>placeholder</button> <!-- nazwa użytkownika z bazy danych albo login/sineup -->
+                <button id="user"><span class="icon-down-open"></span>placeholder</button> <!-- nazwa użytkownika z bazy danych albo login/sineup -->
                 <div>
                 <a href="../login/login.html">Login</a>
                 <a href="../login/sing up.html">Sing up</a>
                 </div>
             </div>
-            <a href="../main-site/główna.php"><i class="icon-left-big"></i>return</a>
+            <a href="../main-site/główna.php"><span class="icon-left-big"></span>return</a>
         </div>
     </div>
     <main>
@@ -91,7 +92,22 @@
                     <a href="#">########</a>
                 </li>
                 <li id="patreon"><a href="#">patreon</a></li>
-                <li id="ad"><img src="./giphy.gif" img here alt="ad"></li>
+                <!-- <img src="./giphy.gif" img here alt="ad"> -->
+                <li id="ad">
+                    <?php
+                        $rand = mt_rand(1,3);
+                        switch ($rand) {
+                            case 1:
+                                echo '<img src="../reklamy/KuchVLOG.jpg">';
+                                break;
+                            case 2:
+                                echo '<img src="../reklamy/Piekarnia.jpg">';
+                                break;
+                            case 3:
+                                echo '<img src="../reklamy/pOkolicy.jpg">';
+                            break;
+                        }
+                    ?></li>
             </ul>
         </aside>
         <article>
