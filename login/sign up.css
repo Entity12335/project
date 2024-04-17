@@ -14,28 +14,57 @@
     margin: 0;
     box-sizing: border-box;
 }
-body > div > header > h1 > a{ /* header */
+body > div > header > h1>a{ /* header */
     height: 5vh;
     line-height: 4vh;
     width: auto;
     border-width: 4px;
     border-style: solid;
     border-color: #618B83;
+    display: block;
     background-color: #618B83;
+    text-align: center;
+    text-decoration: none;
+    color: black;
 }
+
 body > div{ /* header i div z resztą */
     display: flex;
     justify-content: space-between;
     background-color: #618B83;
 }
-body > div form{ /* formularz */
+#searchdell{
+    display: block;
+    padding: 6px 5px;
+    margin-right: 1px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+#Szukane{
+    display: block;
+    position: absolute;
+}
+.Szukane{
+    border-width:1px;
+    width: 284px;
+    padding: 7px;
+    font-size: 17px;
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+body form#search{ /* formularz wyszukiwania*/
     height: 5vh;
     border-width: 4px;
+    width: 284px;
     align-items: center;
-    width: auto;
     display: flex;
     justify-content: center;
-    align-items: center;
     background-color: #e69c6a;
     border-style: solid;
     border-color: #618B83;
@@ -60,7 +89,7 @@ body > div button[type=Submit]{/* formularz przyisk */
     border-width: 4px;
     border-style: solid;
     border-color: #618B83;
-    min-width: 6vw;
+    min-width: 7vw;
     background-color: #e69c6a;
     height: 5vh;
 }
@@ -72,7 +101,7 @@ body > div button[type=Submit]{/* formularz przyisk */
     display: none;
 }
 #log a{
-    min-width: 6vw;
+    min-width: 7vw;
     border-left: solid;
     border-right: solid;
     border-color: #618B83;
@@ -85,7 +114,23 @@ body > div button[type=Submit]{/* formularz przyisk */
 body div>button:active{ /* przyciskanie menu */ 
     color: white;
 }
-body > div a{ /*button new*/
+
+#searchDel{
+    border-width: 4px;
+    display: block;
+    border-style: solid;
+    border-color: #618B83;
+    border-left: none;
+    border-right: none;
+    height: 5vh;
+    line-height: 4vh;
+    text-align: center;
+    background-color: #e69c6a;
+    width: 2vw;
+    text-decoration: none;
+    color: black;
+}
+.anull{ /*button new*/
     border-width: 4px;
     display: block;
     border-style: solid;
@@ -100,12 +145,15 @@ body > div a{ /*button new*/
     text-decoration: none;
     color: black;
 }
-div >a:hover{ /* podświetlenie new */
+.anull:hover{ /* podświetlenie new */
     background-color: #E07750;
 }
-body > div a:active{ /* przyciskanie new */
-    color: white;
+
+
+.anull:active{ /* przyciskanie new */
+    color: #f3f3f3;
 }
+
 body > div > div { /* div > search bar i reszta */
     display: flex;
 }

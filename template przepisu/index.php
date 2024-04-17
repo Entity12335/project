@@ -3,10 +3,6 @@
 
     require_once "../login/connect.php";
 
-    // if(($_SESSION['zalogowany']!=true)){
-    //     header('Location: ../login/login.php');
-    //     exit();
-    // }
 
     try {
         $pdo = new PDO($dsn, $db_user, $db_password);
@@ -32,6 +28,9 @@
             </h1>
         </header>
         <div>
+        <?php
+                if(isset($_GET['Szukaj']) && $_GET['Szukaj']!=='')echo '<a href="./główna.php" id=\'searchDell\'>X</a>';
+            ?>
             <div id='Szukaj'>
             <form method="get" name="myForm" id="search" action="">
                 <input type="text" name="search" value="<?php echo $_GET['search'] ?>" hidden>
@@ -68,8 +67,13 @@
             <div id="log">
                 <button id="user"><span class="icon-down-open"></span>placeholder</button> <!-- nazwa użytkownika z bazy danych albo login/sineup -->
                 <div>
-                <a href="../login/login.html">Login</a>
-                <a href="../login/sing up.html">Sing up</a>
+                    <?php
+                        if((isset($_SESSION['zalogowany'])&&($_SESSION['zalogowany']))){
+                            echo@'<a class=\'anull\' href="../logout.php">Wyloguj</a>';
+                        }else{
+                            echo '<a class=\'anull\' href="../login/login.php">Login</a><a class=\'anull\' href="../login/sing up.php">Sing up</a>';
+                        }
+                    ?>
                 </div>
             </div>
         </div>

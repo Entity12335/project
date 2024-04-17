@@ -25,28 +25,31 @@
 ul{
     list-style-type: none;
 }
-body > div > header > h1{ /* header */
+body > div > header > h1>a{ /* header */
     height: 5vh;
     line-height: 4vh;
     width: auto;
     border-width: 4px;
     border-style: solid;
     border-color: #618B83;
+    display: block;
     background-color: #618B83;
+    text-align: center;
+    text-decoration: none;
+    color: black;
 }
 body > div{ /* header i div z resztą */
     display: flex;
     justify-content: space-between;
     background-color: #618B83;
 }
-body form#search{ /* formularz wyszukiwania*/
+body form#fromszukaj{ /* formularz wyszukiwania*/
     height: 5vh;
     border-width: 4px;
+    width: 284px;
     align-items: center;
-    width: auto;
     display: flex;
     justify-content: center;
-    align-items: center;
     background-color: #e69c6a;
     border-style: solid;
     border-color: #618B83;
@@ -59,19 +62,37 @@ form > input[type=text]{/* formularz input */
 }
 body > div button[type=Submit]{/* formularz przyisk */
     float: right;
+    display: block;
     padding: 6px 5px;
     margin-right: 1px;
     background: #ddd;
-    font-size: 15px;
+    font-size: 17px;
     border: none;
     cursor: pointer;
+}
+#Szukane{
+    display: block;
+    position: absolute;
+
+}
+.Szukane{
+    border-width:1px;
+    width: 284px;
+    padding: 7px;
+    font-size: 17px;
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    text-decoration: none;
+    color: black;
+    display: block;
 }
 #user{ /* przycisk menu */
     border: none;
     border-width: 4px;
     border-style: solid;
     border-color: #618B83;
-    min-width: 6vw;
+    min-width: 7vw;
     background-color: #e69c6a;
     height: 5vh;
 }
@@ -83,7 +104,7 @@ body > div button[type=Submit]{/* formularz przyisk */
     display: none;
 }
 #log a{
-    min-width: 6vw;
+    min-width: 7vw;
     border-left: solid;
     border-right: solid;
     border-color: #618B83;
@@ -93,7 +114,22 @@ body > div button[type=Submit]{/* formularz przyisk */
     flex-direction: column;
     position: absolute;
 }
-body > div a{ /*button new*/
+#searchDell{
+    border-width: 4px;
+    display: block;
+    border-style: solid;
+    border-color: #618B83;
+    border-left: none;
+    border-right: none;
+    height: 5vh;
+    line-height: 4vh;
+    text-align: center;
+    background-color: #e69c6a;
+    width: 2vw;
+    text-decoration: none;
+    color: black;
+}
+.anull{ /*button new*/
     border-width: 4px;
     display: block;
     border-style: solid;
@@ -108,6 +144,16 @@ body > div a{ /*button new*/
     text-decoration: none;
     color: black;
 }
+
+.anull:hover{ /* podświetlenie new */
+    background-color: #E07750;
+}
+
+
+.anull:active{ /* przyciskanie new */
+    color: #f3f3f3;
+}
+
 body > div label{
     border-width: 4px;
     display: block;
@@ -122,13 +168,6 @@ body > div label{
     width: 5vw;
     text-decoration: none;
     color: black;
-}
-body > div a:hover{ /* podświetlenie new */
-    background-color: #E07750;
-}
-
-body > div a:active{ /* przyciskanie new */
-    color: #f3f3f3;
 }
 
 body > div > div { /* div > search bar i reszta */

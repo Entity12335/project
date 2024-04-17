@@ -44,6 +44,7 @@ body > div{ /* header i div z resztą */
     background-color: #618B83;
 }
 
+
 #Szukane{
     display: block;
     position: absolute;
@@ -80,6 +81,7 @@ form > input[type=text]{/* formularz input */
 }
 body > div button[type=Submit]{/* formularz przyisk */
     float: right;
+    display: block;
     padding: 6px 5px;
     margin-right: 1px;
     background: #ddd;
@@ -92,7 +94,7 @@ body > div button[type=Submit]{/* formularz przyisk */
     border-width: 4px;
     border-style: solid;
     border-color: #618B83;
-    min-width: 6vw;
+    min-width: 7vw;
     background-color: #e69c6a;
     height: 5vh;
 }
@@ -104,7 +106,7 @@ body > div button[type=Submit]{/* formularz przyisk */
     display: none;
 }
 #log a{
-    min-width: 6vw;
+    min-width: 7vw;
     border-left: solid;
     border-right: solid;
     border-color: #618B83;
@@ -113,6 +115,21 @@ body > div button[type=Submit]{/* formularz przyisk */
     display: block; 
     flex-direction: column;
     position: absolute;
+}
+#searchDell{
+    border-width: 4px;
+    display: block;
+    border-style: solid;
+    border-color: #618B83;
+    border-left: none;
+    border-right: none;
+    height: 5vh;
+    line-height: 4vh;
+    text-align: center;
+    background-color: #e69c6a;
+    width: 2vw;
+    text-decoration: none;
+    color: black;
 }
 .anull{ /*button new*/
     border-width: 4px;
@@ -266,7 +283,7 @@ article{
 
 footer{ /* the foot */ 
     background-color: #615753;
-    height: calc(15vh - 6px);
+    height: 11.3vh;
 }
 
 

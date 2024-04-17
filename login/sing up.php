@@ -1,6 +1,8 @@
 <?php
     session_start();
-
+    
+    require_once "connect.php";
+    
     if((isset($_SESSION['zalogowany'])&&($_SESSION['zalogowany']))){
         header('Location: ../main-site/główna.php');
         exit();
@@ -69,7 +71,6 @@
         }
         //powturzenia--------------------------------------
 
-        require_once "connect.php";
 
         try{
             $connection = new PDO($dsn, $db_user, $db_password);
@@ -136,16 +137,55 @@
             </h1>
         </header>
         <div>
-            <form name="myForm" id="search" >
-                <input type="text" placeholder="Szukaj.." name="Szukaj">
-                <button type="submit" id="butt"><i class="icon-search"></i></button>
-            </form>
-            <a href="../strona prepisu/index.php"><i class="icon-plus"></i>new</a> <!-- link do tworzenia strony -->
+            <?php
+                if(isset($_GET['Szukaj']) && $_GET['Szukaj']!=='')echo '<a href="./główna.php" id=\'searchDell\'>X</a>';
+            ?>
+            <div id='Szukaj'>
+                
+                <form method="get" id='search' name="myForm" action="">
+
+                    <input type="text" placeholder="Szukaj.." name="Szukaj">
+                    <button type="submit" id="butt"><span class="icon-search"></span></button>
+
+                </form>
+                
+                <div id='Szukane'>
+                <?php
+
+                    try{
+                        $pdo = new PDO($dsn,$db_user,$db_password);
+                    }catch(PDOException $e){
+                        $e->getMessage();
+                    }
+                    try{               
+                        $ilocs = 3;
+                        $szukaj = $pdo->prepare('SELECT * FROM artykuly');
+                        $szukaj->execute();
+                        $szukaj->setFetchMode(PDO::FETCH_ASSOC);
+                        foreach($szukaj->fetchAll() as $_key => $_val){
+                            if($ilocs>0){
+                                if(isset($_GET['Szukaj'])&&$_GET['Szukaj']!=='' && str_contains($_val['Tytul'],$_GET['Szukaj'])){
+                                    echo '<a href="../template przepisu/index.php?search='.$_val['Tytul'].'" class="Szukane">'.$_val['Tytul'].'</a>';
+                                }
+                                $ilocs=$ilocs-1;
+                            }
+                        }
+                        // <a href="#" class="Szukane">Burger</a>
+                        // <a href="#" class="Szukane">Burger</a>
+                        // <a href="#" class="Szukane">Burger</a>
+                
+                    }catch(PDOException $e){
+                        $e->getMessage();
+                    }
+                ?>
+                </div>
+            </div>
+            <a href="../strona prepisu/index.php" class="anull"><i class="icon-plus"></i>new</a> <!-- link do tworzenia strony -->
             <div id="log">
                 <button id="user"><i class="icon-down-open"></i>placeholder</button> 
                 <div>
-                <a href="login.php">Login</a>
-                <a href="sing up.php">Sing up</a>
+                <a href="login.php" class="anull">Login</a>
+                <a href="sing up.php" class="anull">Sing up</a>
                 </div>
             </div>
         </div>
