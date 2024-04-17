@@ -16,6 +16,15 @@
     box-sizing: border-box;
 } 
 
+.error{
+    color: red;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+ul{
+    list-style-type: none;
+}
 body > div > header > h1{ /* header */
     height: 5vh;
     line-height: 4vh;
@@ -53,7 +62,7 @@ body > div button[type=Submit]{/* formularz przyisk */
     padding: 6px 5px;
     margin-right: 1px;
     background: #ddd;
-    font-size: 17px;
+    font-size: 15px;
     border: none;
     cursor: pointer;
 }
@@ -99,16 +108,35 @@ body > div a{ /*button new*/
     text-decoration: none;
     color: black;
 }
+body > div label{
+    border-width: 4px;
+    display: block;
+    border-style: solid;
+    border-color: #618B83;
+    border-left: none;
+    border-right: none;
+    height: 5vh;
+    line-height: 4vh;
+    text-align: center;
+    background-color: #e69c6a;
+    width: 5vw;
+    text-decoration: none;
+    color: black;
+}
 body > div a:hover{ /* podświetlenie new */
     background-color: #E07750;
 }
+
 body > div a:active{ /* przyciskanie new */
     color: #f3f3f3;
 }
+
 body > div > div { /* div > search bar i reszta */
     display: flex;
 }
+
 body > main{ 
+    min-height: 80.6vh;
     display: flex;
     list-style: none;
     padding: 3px;
@@ -122,7 +150,7 @@ body > main{
     list-style: none;
 }
 #leftAside{ /* lewy aside */
-    width: 15vw;
+    min-width: 15vw;
     margin: 5px;
     background-color: #bda198;
 }
@@ -130,9 +158,8 @@ body > main{
    margin: 5px;
     height: 5vh;
     text-align: center;
-    align-items: center;
-    justify-content: center;
-    display: flex;
+    display: block;
+    line-height: 4vh;
     background-color: #5bcab4;
 }
 #hasz>a{
@@ -143,12 +170,11 @@ body > main{
 }
 
 #patreon{ /* patreon */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
+    line-height: 5vh;
     margin: 5px;
     background-color: #d39179;
-    
+    text-align: center;
    
     height: 5vh;
 }
@@ -158,70 +184,74 @@ body > main{
 #ad{ /* reklama */
     margin: 5px;
     background-color: #51E0C4;
-    
+    height: 70vh;
 
 }
 
-main>article>header{
-    width: calc(100vw - 30vw);
+#ad img{
+    width: 100%;
+    height: 100%;
+}
+textarea{
+    margin: 10px;
+    margin-bottom: 0;
+    justify-content: start;
+    height: 30px;
+    width: 60vw;
+    border-style: none;
+    padding: 5px;
+    font-size: 17px;
     background-color: #f3f3f3;
-    margin: 10px;
 }
-.hasz{ 
-    margin: 10px;
-    width: calc(100vw - 30vw);
-    height: calc(50.2vh - 30vh);
-    background-color: #f3f3f3; 
+
+#formOpis{
+    min-height: 20vh;
 }
-.opis{ /* opis */
-    margin: 10px;
-    width: calc(100vw - 30vw);
-    height: calc(50vh - 30vh); 
-    background-color: #f3f3f3; 
+
+#formPrzepis{
+    min-height: 41vh;
 }
-main>article>div{
+
+#myForms{
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+main>article>form>div{
+    display: flex;
+    justify-content: space-between;
+    width: 60vw;
+    margin: 10px;
+
 }
 
 .left{
-    margin: 10px;
+    min-width: 33vw;
     padding-left: 25px;
-    width: calc(55vw - 10vw);
+    margin-right: 10px;
     background-color: #f3f3f3;
 }
 
-
-#myForms{
-    background-color: #f3f3f3;
-    justify-content: start;
-}
-#myForm{
-    justify-content: start;
-    background-color: #f3f3f3;
-}
 .right{
     clear: right;
-    margin: 10px;
-    margin-left: 0px;
-
-    width: calc(34.3vw - 10vw);
+    width: 26vw;
 
     background-color: #f3f3f3;
+
+    justify-content: start;
+
     
 }
-.Przepis{ /* treść */
-    
-    margin: 10px;
-    width: calc(100vw - 30vw);
-    height: calc(50vh - 30vh);
-    background-color: #f3f3f3; 
+
+#output{
+    width: 26vw;
 }
 
 #rightAside{ /* prawy aside */
     flex-flow: column;
-    width: 15vw;
-    background-color: #bda198;
- 
+    min-width: 15vw;
+    background-color: #bda198; 
     margin: 5px;
 }
 
@@ -236,12 +266,7 @@ footer{ /* the foot */
     
     width: 200px;
 }
-span{
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 1px;
-    background-color: rgb(221, 219, 219);
-}
+
 
 [class^="icon-"]:before, [class*=" icon-"]:before {
     font-family: "fontello";

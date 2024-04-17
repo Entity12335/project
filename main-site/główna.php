@@ -21,7 +21,7 @@
                 <input type="text" placeholder="Szukaj.." name="Szukaj">
                 <button type="submit" id="butt"><i class="icon-search"></i></button>
             </form>
-            <a href="#"><i class="icon-plus"></i>new</a> <!-- link do tworzenia strony -->
+            <a href="../strona prepisu/index.php"><i class="icon-plus"></i>new</a> <!-- link do tworzenia strony -->
             <div id="log">
                 <button id="user"><i class="icon-down-open"></i>placeholder</button> <!-- nazwa użytkownika z bazy danych albo login/sineup -->
                 <div>
@@ -43,7 +43,21 @@
                     <a href="#">########</a>
                 </li>
                 <li id="patreon"><a href="#">patreon</a></li>
-                <li id="ad"><img src="./giphy.gif" img here alt="ad"></li>
+                <li id="ad">
+                    <?php
+                        $rand = mt_rand(1,3);
+                        switch ($rand) {
+                            case 1:
+                                echo '<img src="../reklamy/KuchVLOG.jpg">';
+                                break;
+                            case 2:
+                                echo '<img src="../reklamy/Piekarnia.jpg">';
+                                break;
+                            case 3:
+                                echo '<img src="../reklamy/pOkolicy.jpg">';
+                            break;
+                        }
+                    ?></li>
             </ul>
         </aside>
         <article>
