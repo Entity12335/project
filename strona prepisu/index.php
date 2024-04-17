@@ -3,10 +3,10 @@
 
     require_once "../login/connect.php";
 
-    if(($_SESSION['zalogowany']!=true)){
-        header('Location: ../login/login.php');
-        exit();
-    }
+    // if(($_SESSION['zalogowany']!=true)){
+    //     header('Location: ../login/login.php');
+    //     exit();
+    // }
 
     try {
         $pdo = new PDO($dsn, $db_user, $db_password);

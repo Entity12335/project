@@ -22,7 +22,10 @@
     margin-bottom: 10px;
 }
 
-
+#ad>img{
+    width: 14.4vw;
+    height: 100%;
+}
 
 body > div > header > h1{ /* header */
     height: 5vh;
