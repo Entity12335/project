@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sty 26, 2024 at 09:37 AM
+-- Generation Time: Apr 04, 2024 at 07:59 AM
 -- Wersja serwera: 10.4.32-MariaDB
 -- Wersja PHP: 8.2.12
 
@@ -24,15 +24,16 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `artykuły`
+-- Struktura tabeli dla tabeli `artykuly`
 --
 
-CREATE TABLE `artykuły` (
+CREATE TABLE `artykuly` (
   `IDart` int(11) NOT NULL,
-  `Tytuł` text NOT NULL,
+  `Tytul` text NOT NULL,
   `Opis` mediumtext NOT NULL,
   `Hasz` text NOT NULL,
-  `Składniki` longtext NOT NULL,
+  `Skladniki` longtext NOT NULL,
+  `Img` longblob NOT NULL,
   `Przepis` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
@@ -72,9 +73,9 @@ INSERT INTO `users` (`ID`, `Login`, `Haslo`, `Email`) VALUES
 --
 
 --
--- Indeksy dla tabeli `artykuły`
+-- Indeksy dla tabeli `artykuly`
 --
-ALTER TABLE `artykuły`
+ALTER TABLE `artykuly`
   ADD PRIMARY KEY (`IDart`);
 
 --
@@ -94,9 +95,9 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `artykuły`
+-- AUTO_INCREMENT for table `artykuly`
 --
-ALTER TABLE `artykuły`
+ALTER TABLE `artykuly`
   MODIFY `IDart` int(11) NOT NULL AUTO_INCREMENT;
 
 --
