@@ -115,21 +115,6 @@ body div>button:active{ /* przyciskanie menu */
     color: white;
 }
 
-#searchDel{
-    border-width: 4px;
-    display: block;
-    border-style: solid;
-    border-color: #618B83;
-    border-left: none;
-    border-right: none;
-    height: 5vh;
-    line-height: 4vh;
-    text-align: center;
-    background-color: #e69c6a;
-    width: 2vw;
-    text-decoration: none;
-    color: black;
-}
 .anull{ /*button new*/
     border-width: 4px;
     display: block;
@@ -142,6 +127,21 @@ body div>button:active{ /* przyciskanie menu */
     text-align: center;
     background-color: #e69c6a;
     width: 5vw;
+    text-decoration: none;
+    color: black;
+}
+#searchDell{
+    border-width: 4px;
+    display: block;
+    border-style: solid;
+    border-color: #618B83;
+    border-left: none;
+    border-right: none;
+    height: 5vh;
+    line-height: 4vh;
+    text-align: center;
+    background-color: #e69c6a;
+    width: 2vw;
     text-decoration: none;
     color: black;
 }

@@ -138,7 +138,7 @@
         </header>
         <div>
             <?php
-                if(isset($_GET['Szukaj']) && $_GET['Szukaj']!=='')echo '<a href="./główna.php" id=\'searchDell\'>X</a>';
+                if(isset($_GET['Szukaj']) && $_GET['Szukaj']!=='')echo '<a href="./sing up.php" id=\'searchDell\'>X</a>';
             ?>
             <div id='Szukaj'>
                 

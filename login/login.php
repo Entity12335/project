@@ -23,7 +23,7 @@
         </header>
         <div>
             <?php
-                if(isset($_GET['Szukaj']) && $_GET['Szukaj']!=='')echo '<a href="./główna.php" id=\'searchDell\'>X</a>';
+                if(isset($_GET['Szukaj']) && $_GET['Szukaj']!=='')echo '<a href="./login.php" id=\'searchDell\' class="anull">X</a>';
             ?>
             <div id='Szukaj'>
                 
