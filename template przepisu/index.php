@@ -1,44 +1,46 @@
-<?php session_start(); 
-require_once "../login/connect.php";
-try {
-    $pdo = new PDO($dsn, $db_user, $db_password);
-} catch(PDOException $e) {
-    echo $e->getMessage();
-}
-?>
+<?php
+    session_start();
 
+    require_once "../login/connect.php";
+
+    $dsn = $dsn.';charset=utf8';
+    try {
+        $pdo = new PDO($dsn, $db_user, $db_password);
+    } catch(PDOException $e) {
+        echo $e->getMessage();
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="głównacss.css">
-    <script src="./głównajs.js"></script>
-</head>
+    <link rel="stylesheet" href="./style.css">
+
+</head> 
 <body>
     <div>
-        <header>
+    <header>
             <h1>
-                <a href="../main-site/główna.php">Nasza Strona ***** *** ( TAK)</a>
+                <a id='head' href="../main-site/główna.php">Nasza Strona ***** *** ( TAK)</a>
             </h1>
         </header>
         <div>
-            <?php
-                if(isset($_GET['Szukaj']) && $_GET['Szukaj']!=='')echo '<a href="./główna.php" id=\'searchDell\'>X</a>';
+        <?php
+                if(isset($_GET['Szukaj']) && $_GET['Szukaj']!=='')echo '<a href="./index.php?search='.$_GET['search'].'" id=\'searchDell\'>X</a>';
             ?>
             <div id='Szukaj'>
-                
-                <form method="get" id='search' name="myForm" action="">
-
-                    <input type="text" placeholder="Szukaj.." name="Szukaj">
-                    <button type="submit" id="butt"><span class="icon-search"></span></button>
-
-                </form>
-                
+            <form method="get" name="myForm" id="search" action="">
+                <input type="text" name="search" value="<?php echo $_GET['search'] ?>" hidden>
+                <input type="text" placeholder="Szukaj.." name="Szukaj">
+                <button type="submit" id="butt"><span class="icon-search"></span></button>
+            </form>
                 <div id='Szukane'>
                 <?php
-                    try{               
+                    try{   
+                            
                         $ilocs = 3;
                         $szukaj = $pdo->prepare('SELECT * FROM artykuly');
                         $szukaj->execute();
@@ -61,7 +63,7 @@ try {
                 ?>
                 </div>
             </div>
-            <a href="../strona prepisu/index.php" class="anull"><span class="icon-plus"></span>new</a> <!-- link do tworzenia strony -->
+            <a href="../strona prepisu/index.php" class="anull"><span class="icon-plus"></span>new</a><!-- link do tworzenia strony -->
             <div id="log">
                 <button id="user"><span class="icon-down-open"></span>placeholder</button> <!-- nazwa użytkownika z bazy danych albo login/sineup -->
                 <div>
@@ -77,12 +79,13 @@ try {
         </div>
     </div>
     <main>
-        <aside id="left">
+        <aside id="leftAside">
             <ul>
                 <li id="hasz">
                     <a href="#">########</a>
                 </li>
                 <li id="patreon"><a href="#">patreon</a></li>
+                <!-- <img src="./giphy.gif" img here alt="ad"> -->
                 <li id="ad">
                     <?php
                         $rand = mt_rand(1,3);
@@ -100,30 +103,32 @@ try {
                     ?></li>
             </ul>
         </aside>
-        <article>
-            <section>
-                <img id="rick" src="https://media.tenor.com/x8v1oNUOmg4AAAAd/rickroll-roll.gif">
-            </section>
-        </article>
-        <aside id="right">
-                <p>Lorem, ipsum dolor.</p>
-                <p>Autem, tenetur modi?</p>
-                <p>Pariatur, corrupti ipsam?</p>
-                <p>Fuga, dolorum iusto.</p>
-        </aside>
+        <?php
+            try{
+            $find = $pdo->prepare('SELECT * FROM artykuly WHERE Tytul = :tytul');
+            $find->bindParam(':tytul', $_GET['search']);
+            $find->execute();
+            $find->setFetchMode(PDO::FETCH_ASSOC);
+            foreach($find->fetchAll() as $kay => $val){
+                ?>
+            <article>
+                
+                <div id="formName" class="textarea"><h2><?php echo $val['Tytul']; ?></h2></div>
+                
+                <div id="formOpis" class="textarea"><h3>Opis</h3><?php echo $val['Opis']; ?></div>
+                
+                <div id="leftRight" class="textarea">
+                    <ul class="left"><h3>Składniki</h3><?php foreach(explode("&",$val['Skladniki']) as $_k => $_v){ echo '<li>'.$_v."</li>"; }?></ul> 
+                    <div class="right"><?php if(isset($val['Img'])){echo '<img id="output" src="data:image/jpeg;base64,'.base64_encode($val['Img']).'"/>'; }?></div>
+                </div>
+                        
+                <div id="formPrzepis" class="textarea"><h3>Przepis</h3><?php echo $val['Przepis'] ?></div>                                
+                        
+            </article>
+            <?php  }}catch(PDOException $e){ $e->getMessage(); } ?>
     </main>
     <footer>
-        <div>
-            <img src="https://i.kym-cdn.com/photos/images/newsfeed/001/552/421/72b.gif">
-            <img src="https://i.kym-cdn.com/photos/images/newsfeed/001/552/421/72b.gif"><!-- placeholdery (kochamy pana Mirskiego) -->
-            <img src="https://i.kym-cdn.com/photos/images/newsfeed/001/552/421/72b.gif">
-            <img src="https://i.kym-cdn.com/photos/images/newsfeed/001/552/421/72b.gif">
-            <img src="https://i.kym-cdn.com/photos/images/newsfeed/001/552/421/72b.gif">
-            <img src="https://i.kym-cdn.com/photos/images/newsfeed/001/552/421/72b.gif">
-            <img src="https://i.kym-cdn.com/photos/images/newsfeed/001/552/421/72b.gif">
-            <img src="https://i.kym-cdn.com/photos/images/newsfeed/001/552/421/72b.gif">
-            <img src="https://i.kym-cdn.com/photos/images/newsfeed/001/552/421/72b.gif">
-        </div>
+        &copy;sfsvhgfytug
     </footer>
 </body>
 </html>

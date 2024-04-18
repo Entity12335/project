@@ -1,28 +1,29 @@
 @font-face {
     font-family: 'fontello';
-    src: url('./font/fontello.eot?2278434');
-    src: url('./font/fontello.eot?2278434#iefix') format('embedded-opentype'),
-         url('./font/fontello.woff2?2278434') format('woff2'),
-         url('./font/fontello.woff?2278434') format('woff'),
-         url('./font/fontello.ttf?2278434') format('truetype'),
-         url('./font/fontello.svg?2278434#fontello') format('svg');
+    src: url('../strona\ prepisu/font/fontello.eot?9312500');
+    src: url('../strona\ prepisu/font/fontello.eot?9312500#iefix') format('embedded-opentype'),
+         url('../strona\ prepisu/font/fontello.woff2?9312500') format('woff2'),
+         url('../strona\ prepisu/font/fontello.woff?9312500') format('woff'),
+         url('../strona\ prepisu/font/fontello.ttf?9312500') format('truetype'),
+         url('../strona\ prepisu/font/fontello.svg?9312500#fontello') format('svg');
     font-weight: normal;
     font-style: normal;
-}
-
-
+  }
 
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 } 
-img{
-    width: 100%;
-    height: 100%;
+
+.error{
+    color: red;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
-span{
-    background: none;
+
+#leftAside>ul{
+    list-style-type: none;
 }
 body > div > header > h1>a{ /* header */
     height: 5vh;
@@ -42,21 +43,12 @@ body > div{ /* header i div z resztą */
     justify-content: space-between;
     background-color: #618B83;
 }
-#cujwie{
-    display: flex;
-}
-#searchdell{
-    display: block;
-    padding: 6px 5px;
-    margin-right: 1px;
-    background: #ddd;
-    font-size: 17px;
-    border: none;
-    cursor: pointer;
-}
+
+
 #Szukane{
     display: block;
     position: absolute;
+
 }
 .Szukane{
     border-width:1px;
@@ -107,7 +99,7 @@ body > div button[type=Submit]{/* formularz przyisk */
     height: 5vh;
 }
 #user:hover{ /* podświetlenie menu*/
-    background-color: #E07750;
+    background-color: aqua;
 }
 #log div{
     display: flex;
@@ -154,6 +146,7 @@ body > div button[type=Submit]{/* formularz przyisk */
     text-decoration: none;
     color: black;
 }
+
 .anull:hover{ /* podświetlenie new */
     background-color: #E07750;
 }
@@ -166,7 +159,9 @@ body > div button[type=Submit]{/* formularz przyisk */
 body > div > div { /* div > search bar i reszta */
     display: flex;
 }
+
 body > main{ 
+    min-height: 80.6vh;
     display: flex;
     list-style: none;
     padding: 3px;
@@ -179,125 +174,123 @@ body > main{
     flex-flow: column;
     list-style: none;
 }
-#left{ /* lewy aside */
+#leftAside{ /* lewy aside */
     min-width: 15vw;
-    background-color: #615753;
+    margin: 5px;
+    background-color: #bda198;
 }
-#hasz>a{ /* hasztagi */
-    border-width: 4px;
-    border-style: solid;
-    border-color: #615753;
-    border-bottom: none;
-    border-top: none;
+#hasz{ /* hasztagi */
+   margin: 5px;
     height: 5vh;
     text-align: center;
-    align-items: center;
-    justify-content: center;
-    display: flex;
+    display: block;
+    line-height: 4vh;
     background-color: #5bcab4;
 }
-#hasz>a>div{
+#hasz>a{
     display: block;
 }
-#hasz > a:hover{
+#hasz:hover{
     background-color: #51E0C4;
 }
 
-#patreon>a{ /* patreon */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-width: 4px;
+#patreon{ /* patreon */
+    display: block;
+    line-height: 5vh;
+    margin: 5px;
     background-color: #d39179;
-    border-style: solid;
-    border-color: #615753;   
+    text-align: center;
+   
     height: 5vh;
 }
-#patreon> a:hover{
+#patreon:hover{
     background-color: #E07750;
 }
 #ad{ /* reklama */
-    border-width: 4px;
-    height: calc(100vh - 30vh);
-    border-style: solid;
-    border-color: #615753;
-    border-top: none;
-    border-bottom: none;
-    display: block;
+    margin: 5px;
+
+    height: 70vh;
+
+}
+
+#ad img{
+    width: 100%;
+    height: 100%;
+}
+
+.textarea{
+    margin: 10px;
+    margin-bottom: 0;
+    justify-content: start;
+    min-height: 5px;
+    width: 75vw;
+    border-style: none;
+    padding: 5px;
+    font-size: 17px;
+    background-color: gray;
+
+}
+
+
+article{
+    display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    align-content: baseline;
+    padding: 2vh;
+    background-color: whitesmoke;
+    margin: 5px;
 }
 
-main > article{ /* treść */
-    width: calc(100vw - 30vw);
-    background-color: #f3f3f3;
-}
-
-#rick{ /*rick*/
-    display: none;
-}
-.hasz{ 
+#leftRight{
+    display: flex;
+    justify-content: space-evenly;
+    width: 75vw;
     margin: 10px;
-    width: calc(100vw - 30vw);
-    /* height: calc(107.2vh - 30vh); */
-    background-color: #f3f3f3; 
-}
-.opis{ /* opis */
-    margin: 10px;
-    width: calc(100vw - 30vw);
-    height: calc(50vh - 30vh); 
 
-    background-color: #f3f3f3; 
+
 }
+
 .left{
-    margin: 10px;
+    min-width: 33vw;
     padding-left: 25px;
-    width: calc(50vw - 10vw);
-    height: calc(60vh- 5vh);
+    margin-right: 10px;
     background-color: #f3f3f3;
-    float: left;
+}
+
+.right{
+    clear: right;
+    height: 35vh;
+
+    background-color: #f3f3f3;
+
+    justify-content: start;
+
     
 }
-.right{
-    margin: 10px;
-    margin-left: 0px;
-    margin-right: calc(20vw- 5vw);
-    width: calc(35vw - 10vw);
-    /* height: calc(40vh- 5vh); */
-    background-color: #f3f3f3;
-    float: right;
-}
-.Przepis{ /* treść */
-    float: left;
-    margin: 10px;
-    width: calc(100vw - 30vw);
-    height: calc(50vh - 30vh);
-    background-color: #f3f3f3; 
+
+#output{
+   height: 35vh;
 }
 
-#right{ /* prawy aside */
+#rightAside{ /* prawy aside */
     flex-flow: column;
     min-width: 15vw;
-    background-color: #bda198;
-    border-width: 4px;
-    border-style: solid;
-    border-color: #615753;
-    border-bottom: none;
-    border-top: none;
+    background-color: #bda198; 
+    margin: 5px;
 }
 
-footer > div{ /* dancin cockroach*/
-    display: flex;
-    height: calc(15vh - 6px);
-    background-color: #867d79;
-    justify-content: center;
-}
+
 footer{ /* the foot */ 
     background-color: #615753;
-    height: calc(15vh - 6px);
+    height: 11.3vh;
 }
 
 
-
+#podgladObrazu {
+    
+    width: 200px;
+}
 
 
 [class^="icon-"]:before, [class*=" icon-"]:before {
@@ -306,7 +299,7 @@ footer{ /* the foot */
     font-weight: normal;
     speak: never;
   
-    display: inline;
+    display: inline-block;
     text-decoration: inherit;
     width: 1em;
     margin-right: .2em;
@@ -335,8 +328,9 @@ footer{ /* the foot */
     /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
   }
   
-  .icon-down-open:before { content: '\e800'; } /* '' */
-  .icon-up-open:before { content: '\e801'; } /* '' */
-  .icon-plus:before { content: '\e802'; } /* '' */
+  .icon-left-big:before { content: '\e800'; } /* '' */
+  .icon-down-open:before { content: '\e801'; } /* '' */
+  .icon-up-open:before { content: '\e802'; } /* '' */
+  .icon-plus:before { content: '\e803'; } /* '' */
   .icon-search:before { content: '\f50d'; } /* '' */
   

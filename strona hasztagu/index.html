@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+<!-- wyszukiwarka -->
+    <script src="./script.js"></script>
+<!-- dodawanie do listy -->
+    <script src="./lista.js"></script>
+</head> 
+<body>
+    <div>
+        <header>
+            <h1>tytuł strony</h1>
+        </header>
+        <div>
+            <form name="myForm" id="search" >
+                <input type="text" placeholder="Szukaj.." name="Szukaj">
+                <button type="submit" id="butt"><i class="icon-search"></i></button>
+            </form>
+            <a href="#"><i class="icon-plus"></i>new</a> <!-- link do tworzenia strony -->
+            <div id="log">
+                <button id="user"><i class="icon-down-open"></i>placeholder</button> <!-- nazwa użytkownika z bazy danych albo login/sineup -->
+                <div>
+                <a href="../login/login.html">Login</a>
+                <a href="../login/sing up.html">Sing up</a>
+                </div>
+            </div>
+            <a href="../main-site/główna"><i class="icon-left-big"></i>return to main</a>
+        </div>
+    </div>
+    <main>
+        <aside id="leftAside">
+            <ul>
+                <li id="hasz">
+                    <a href="#">########</a>
+                </li>
+                <li id="patreon"><a href="#">patreon</a></li>
+                <li id="ad"><img src="./giphy.gif" img here alt="ad"></li>
+            </ul>
+        </aside>
+       
+        <article>
+            <form action="#" method="post" id="myForm">
+            <button type="button" onclick="addHashtagElement()" id="przycisk"> nowy hasz</button>
+                <section class="hasz">
+                
+                    <a href="../strona prepisu/index.html" class="hasztag">  
+                        hasz
+                    </a>
+                
+            
+                </section>
+            </form>
+      
+           
+        </article>
+        <aside id="rightAside">
+                <p>Lorem, ipsum dolor.</p>
+                <p>Autem, tenetur modi?</p>
+                <p>Pariatur, corrupti ipsam?</p>
+                <p>Fuga, dolorum iusto.</p>
+        </aside>
+    </main>
+    <footer>
+        &copy;sfsvhgfytug
+    </footer>
+</body>
+</html>
