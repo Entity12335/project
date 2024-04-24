@@ -224,7 +224,24 @@ footer{ /* the foot */
     height: calc(15vh - 6px);
 }
 
-
+.Komentarz {
+    padding: 20px;
+    display: block;
+    background-color: #bda198;
+}
+#komentarze {
+    margin-top: 20px;
+}
+#comment-form textarea {
+    width: 40vw;
+    height: 10vh;
+    margin-bottom: 10px;
+}
+.comment {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
 
 [class^="icon-"]:before, [class*=" icon-"]:before {
     font-family: "fontello";

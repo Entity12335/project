@@ -9,6 +9,8 @@
     <script src="./script.js"></script>
 <!-- dodawanie do listy -->
     <script src="./lista.js"></script>
+<!-- komentarze -->
+    <script src="./komentarze.js"></script>
 </head> 
 <body>
     <div>
@@ -63,7 +65,22 @@
                 <p>Pariatur, corrupti ipsam?</p>
                 <p>Fuga, dolorum iusto.</p>
         </aside>
+       
     </main>
+    <section class="Komentarz">
+
+        <div id="comment-form">
+            <textarea id="tekstKomentarza" rows="4" placeholder="Wpisz swój komentarz"></textarea>
+            <br>
+            <button onclick="addComment()">Dodaj Komentarz</button>
+        </div>
+        <p></p>
+        <div id="komentarze">
+            <h2>Komentarze:</h2>
+            <!-- Tutaj będą wyświetlane komentarze -->
+        </div>
+    </section>
+ 
     <footer>
         &copy;sfsvhgfytug
     </footer>
