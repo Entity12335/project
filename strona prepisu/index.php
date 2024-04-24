@@ -67,22 +67,59 @@
 <body>
     <div>
         <header>
-            <h1>tytuł strony</h1>
+            <h1>
+                <a href="../main-site/główna.php">Wiki smaków</a>
+            </h1>
         </header>
         <div>
-            <form name="myForm" id="search" >
+            <?php
+                if(isset($_GET['Szukaj']) && $_GET['Szukaj']!=='')echo '<a href="./główna.php" id=\'searchDell\'>X</a>';
+            ?>
+            <div id='Szukaj'>
+            <form method="get" id=fromszukaj name="myForm" action="">
+
                 <input type="text" placeholder="Szukaj.." name="Szukaj">
                 <button type="submit" id="butt"><span class="icon-search"></span></button>
             </form>
+                <div id='Szukane'>
+                <?php
+                    try{   
+                            
+                        $ilocs = 3;
+                        $szukaj = $pdo->prepare('SELECT * FROM artykuly');
+                        $szukaj->execute();
+                        $szukaj->setFetchMode(PDO::FETCH_ASSOC);
+                        foreach($szukaj->fetchAll() as $_key => $_val){
+                            if($ilocs>0){
+                                if(isset($_GET['Szukaj'])&&$_GET['Szukaj']!=='' && str_contains($_val['Tytul'],$_GET['Szukaj'])){
+                                    echo '<a href="../template przepisu/index.php?search='.$_val['Tytul'].'" class="Szukane">'.$_val['Tytul'].'</a>';
+                                }
+                                $ilocs=$ilocs-1;
+                            }
+                        }
+                        // <a href="#" class="Szukane">Burger</a>
+                        // <a href="#" class="Szukane">Burger</a>
+                        // <a href="#" class="Szukane">Burger</a>
+                
+                    }catch(PDOException $e){
+                        $e->getMessage();
+                    }
+                ?>
+                </div>
+            </div>
             <label for="submit-form" tabindex="0"><span class="icon-plus"></span>Wyśli</label><!-- link do tworzenia strony -->
             <div id="log">
                 <button id="user"><span class="icon-down-open"></span>placeholder</button> <!-- nazwa użytkownika z bazy danych albo login/sineup -->
                 <div>
-                <a href="../login/login.html">Login</a>
-                <a href="../login/sing up.html">Sing up</a>
+                    <?php
+                        if((isset($_SESSION['zalogowany'])&&($_SESSION['zalogowany']))){
+                            echo@'<a class=\'anull\' href="../logout.php">Wyloguj</a>';
+                        }else{
+                            echo '<a class=\'anull\' href="../login/login.php">Login</a><a class=\'anull\' href="../login/sing up.php">Sing up</a>';
+                        }
+                    ?>
                 </div>
             </div>
-            <a href="../main-site/główna.php"><span class="icon-left-big"></span>return</a>
         </div>
     </div>
     <main>
@@ -146,12 +183,7 @@
             </form>
 
         </article>
-        <aside id="rightAside">
-                <p>Lorem, ipsum dolor.</p>
-                <p>Autem, tenetur modi?</p>
-                <p>Pariatur, corrupti ipsam?</p>
-                <p>Fuga, dolorum iusto.</p>
-        </aside>
+
     </main>
     <footer>
         &copy;sfsvhgfytug

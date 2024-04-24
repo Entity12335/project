@@ -1,4 +1,11 @@
-<?php session_start(); ?>
+<?php session_start(); 
+require_once "../login/connect.php";
+try {
+    $pdo = new PDO($dsn, $db_user, $db_password);
+} catch(PDOException $e) {
+    echo $e->getMessage();
+}
+?>
 
 <!DOCTYPE html>
 <html lang="pl">
@@ -13,23 +20,56 @@
     <div>
         <header>
             <h1>
-                <a href="../main-site/główna.php">Nasza Strona ***** *** ( TAK)</a>
+                <a href="../main-site/główna.php">Wiki smaków</a>
             </h1>
         </header>
         <div>
-            <form name="myForm" id="search" >
-                <input type="text" placeholder="Szukaj.." name="Szukaj">
-                <button type="submit" id="butt"><i class="icon-search"></i></button>
-            </form>
-            <a href="../strona prepisu/index.php"><i class="icon-plus"></i>new</a> <!-- link do tworzenia strony -->
+            <?php
+                if(isset($_GET['Szukaj']) && $_GET['Szukaj']!=='')echo '<a href="./główna.php" id=\'searchDell\'>X</a>';
+            ?>
+            <div id='Szukaj'>
+                
+                <form method="get" id='search' name="myForm" action="">
+
+                    <input type="text" placeholder="Szukaj.." name="Szukaj">
+                    <button type="submit" id="butt"><span class="icon-search"></span></button>
+
+                </form>
+                
+                <div id='Szukane'>
+                <?php
+                    try{               
+                        $ilocs = 3;
+                        $szukaj = $pdo->prepare('SELECT * FROM artykuly');
+                        $szukaj->execute();
+                        $szukaj->setFetchMode(PDO::FETCH_ASSOC);
+                        foreach($szukaj->fetchAll() as $_key => $_val){
+                            if($ilocs>0){
+                                if(isset($_GET['Szukaj'])&&$_GET['Szukaj']!=='' && str_contains($_val['Tytul'],$_GET['Szukaj'])){
+                                    echo '<a href="../template przepisu/index.php?search='.$_val['Tytul'].'" class="Szukane">'.$_val['Tytul'].'</a>';
+                                }
+                                $ilocs=$ilocs-1;
+                            }
+                        }
+                        // <a href="#" class="Szukane">Burger</a>
+                        // <a href="#" class="Szukane">Burger</a>
+                        // <a href="#" class="Szukane">Burger</a>
+                
+                    }catch(PDOException $e){
+                        $e->getMessage();
+                    }
+                ?>
+                </div>
+            </div>
+            <a href="../strona prepisu/index.php" class="anull"><span class="icon-plus"></span>new</a> <!-- link do tworzenia strony -->
             <div id="log">
-                <button id="user"><i class="icon-down-open"></i>placeholder</button> <!-- nazwa użytkownika z bazy danych albo login/sineup -->
+                <button id="user"><span class="icon-down-open"></span>placeholder</button> <!-- nazwa użytkownika z bazy danych albo login/sineup -->
                 <div>
                     <?php
                         if((isset($_SESSION['zalogowany'])&&($_SESSION['zalogowany']))){
-                            echo@'<a href="../logout.php">Wyloguj</a>';
+                            echo@'<a class=\'anull\' href="../logout.php">Wyloguj</a>';
                         }else{
-                            echo '<a href="../login/login.php">Login</a><a href="../login/sing up.php">Sing up</a>';
+                            echo '<a class=\'anull\' href="../login/login.php">Login</a><a class=\'anull\' href="../login/sing up.php">Sing up</a>';
                         }
                     ?>
                 </div>
