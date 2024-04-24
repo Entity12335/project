@@ -236,7 +236,7 @@ textarea{
     margin-bottom: 0;
     justify-content: start;
     height: 30px;
-    width: 60vw;
+    width: 80vw;
     border-style: none;
     padding: 5px;
     font-size: 17px;
@@ -260,7 +260,7 @@ textarea{
 main>article>form>div{
     display: flex;
     justify-content: space-between;
-    width: 60vw;
+    width: 65vw;
     margin: 10px;
 
 }

@@ -68,7 +68,7 @@
     <div>
         <header>
             <h1>
-                <a href="../main-site/główna.php">Nasza Strona ***** *** ( TAK)</a>
+                <a href="../main-site/główna.php">Wiki smaków</a>
             </h1>
         </header>
         <div>
@@ -183,12 +183,7 @@
             </form>
 
         </article>
-        <aside id="rightAside">
-                <p>Lorem, ipsum dolor.</p>
-                <p>Autem, tenetur modi?</p>
-                <p>Pariatur, corrupti ipsam?</p>
-                <p>Fuga, dolorum iusto.</p>
-        </aside>
+
     </main>
     <footer>
         &copy;sfsvhgfytug

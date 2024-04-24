@@ -20,7 +20,7 @@ try {
     <div>
         <header>
             <h1>
-                <a href="../main-site/główna.php">Nasza Strona ***** *** ( TAK)</a>
+                <a href="../main-site/główna.php">Wiki smaków</a>
             </h1>
         </header>
         <div>

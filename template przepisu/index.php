@@ -24,7 +24,7 @@
     <div>
     <header>
             <h1>
-                <a id='head' href="../main-site/główna.php">Nasza Strona ***** *** ( TAK)</a>
+                <a id='head' href="../main-site/główna.php">Wiki smaków</a>
             </h1>
         </header>
         <div>
