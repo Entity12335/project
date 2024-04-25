@@ -3,10 +3,10 @@
 
     require_once "../login/connect.php";
 
-    // if(($_SESSION['zalogowany']!=true)){
-    //     header('Location: ../login/login.php');
-    //     exit();
-    // }
+    if(($_SESSION['zalogowany']!=true)){
+        header('Location: ../login/login.php');
+        exit();
+    }
 
     try {
         $pdo = new PDO($dsn, $db_user, $db_password);
@@ -72,8 +72,8 @@
             </h1>
         </header>
         <div>
-            <?php
-                if(isset($_GET['Szukaj']) && $_GET['Szukaj']!=='')echo '<a href="./główna.php" id=\'searchDell\'>X</a>';
+            <?php 
+                if(isset($_GET['Szukaj']) && $_GET['Szukaj']!=='')echo '<a href="./index.php" id=\'searchDell\'>X</a>';
             ?>
             <div id='Szukaj'>
             <form method="get" id=fromszukaj name="myForm" action="">
@@ -109,7 +109,7 @@
             </div>
             <label for="submit-form" tabindex="0"><span class="icon-plus"></span>Wyśli</label><!-- link do tworzenia strony -->
             <div id="log">
-                <button id="user"><span class="icon-down-open"></span>placeholder</button> <!-- nazwa użytkownika z bazy danych albo login/sineup -->
+                <button id="user"><span class="icon-down-open"></span>Opcje</button> <!-- nazwa użytkownika z bazy danych albo login/sineup -->
                 <div>
                     <?php
                         if((isset($_SESSION['zalogowany'])&&($_SESSION['zalogowany']))){

@@ -63,7 +63,7 @@ try {
             </div>
             <a href="../strona prepisu/index.php" class="anull"><span class="icon-plus"></span>new</a> <!-- link do tworzenia strony -->
             <div id="log">
-                <button id="user"><span class="icon-down-open"></span>placeholder</button> <!-- nazwa użytkownika z bazy danych albo login/sineup -->
+                <button id="user"><span class="icon-down-open"></span>Opcje</button> <!-- nazwa użytkownika z bazy danych albo login/sineup -->
                 <div>
                     <?php
                         if((isset($_SESSION['zalogowany'])&&($_SESSION['zalogowany']))){

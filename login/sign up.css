@@ -130,6 +130,10 @@ body div>button:active{ /* przyciskanie menu */
     text-decoration: none;
     color: black;
 }
+#cp{
+    display: flex;
+    justify-content: center;
+}
 .anull{ /*button new*/
     border-width: 4px;
     display: block;

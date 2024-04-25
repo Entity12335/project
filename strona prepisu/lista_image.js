@@ -7,7 +7,6 @@ window.addEventListener("DOMContentLoaded", () => {
     
     butt.addEventListener("click",()=>{
         let clone = temp.content.cloneNode(true);
-        console.log("tak")
         ul.appendChild(clone);
         buttRemove = document.querySelectorAll(".remove-btn");
         buttRemove.forEach(el => {

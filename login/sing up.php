@@ -138,7 +138,7 @@
         </header>
         <div>
             <?php
-                if(isset($_GET['Szukaj']) && $_GET['Szukaj']!=='')echo '<a href="./główna.php" id=\'searchDell\'>X</a>';
+                if(isset($_GET['Szukaj']) && $_GET['Szukaj']!=='')echo '<a href="./sing up.php" id=\'searchDell\'>X</a>';
             ?>
             <div id='Szukaj'>
                 
@@ -182,7 +182,7 @@
             </div>
             <a href="../strona prepisu/index.php" class="anull"><i class="icon-plus"></i>new</a> <!-- link do tworzenia strony -->
             <div id="log">
-                <button id="user"><i class="icon-down-open"></i>placeholder</button> 
+                <button id="user"><i class="icon-down-open"></i>Opcje</button> 
                 <div>
                 <a href="login.php" class="anull">Login</a>
                 <a href="sing up.php" class="anull">Sing up</a>
