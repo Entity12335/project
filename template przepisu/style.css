@@ -218,6 +218,20 @@ body > main{
     height: 100%;
 }
 
+#formName{
+    font-size: 25px;
+}
+
+h3{
+    font-size: 23px;
+}
+
+#formOpis{
+    border-bottom: #615753 solid;
+    padding: 10px;
+    padding-left: 35px;
+} 
+
 .textarea{
     margin: 10px;
     margin-bottom: 0;
@@ -227,7 +241,7 @@ body > main{
     border-style: none;
     padding: 5px;
     font-size: 17px;
-    background-color: gray;
+    background-color: #dfdfdf;
 
 }
 
@@ -256,6 +270,7 @@ article{
     padding-left: 25px;
     margin-right: 10px;
     background-color: #f3f3f3;
+    border: #615753 dashed 2px;
 }
 
 .right{
@@ -290,6 +305,11 @@ footer{ /* the foot */
 #podgladObrazu {
     
     width: 200px;
+}
+
+#formPrzepis{
+    padding: 10px;
+    padding-left: 35px;
 }
 
 
