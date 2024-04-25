@@ -41,7 +41,6 @@ body > div{ /* header i div z resztą */
     justify-content: space-between;
     background-color: #618B83;
 }
-
 #Szukane{
     display: block;
     position: absolute;
@@ -114,7 +113,7 @@ body > div button[type=Submit]{/* formularz przyisk */
 body div>button:active{ /* przyciskanie menu */ 
     color: white;
 }
-#searchDell{
+#searchDel{
     border-width: 4px;
     display: block;
     border-style: solid;

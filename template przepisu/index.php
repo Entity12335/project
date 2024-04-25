@@ -3,7 +3,7 @@
 
     require_once "../login/connect.php";
 
-    $dsn = $dsn.';charset=utf8';
+
     try {
         $pdo = new PDO($dsn, $db_user, $db_password);
     } catch(PDOException $e) {
@@ -12,9 +12,9 @@
 
 ?>
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
@@ -24,12 +24,12 @@
     <div>
     <header>
             <h1>
-                <a id='head' href="../main-site/główna.php">Nasza Strona ***** *** ( TAK)</a>
+                <a id='head' href="../main-site/główna.php">Wiki smaków</a>
             </h1>
         </header>
         <div>
         <?php
-                if(isset($_GET['Szukaj']) && $_GET['Szukaj']!=='')echo '<a href="./index.php?search='.$_GET['search'].'" id=\'searchDell\'>X</a>';
+                if(isset($_GET['Szukaj']) && $_GET['Szukaj']!=='')echo '<a href="./główna.php" id=\'searchDell\'>X</a>';
             ?>
             <div id='Szukaj'>
             <form method="get" name="myForm" id="search" action="">
